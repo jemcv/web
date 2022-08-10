@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <main>
+    <div class="info">
+      <div class="ascii">
+        
+     _  
+    | | ___ _ __ ___
+ _  | |/ _ \ '_ ` _ \   
+| |_| |  __/ | | | | |
+ \___/ \___|_| |_| |_|
+      </div>
+      <div class="joker">
+        <img src="/images/gifs/jokerlaugh.gif">
+      </div>
+    </div>
+    <section>
+        <p>Hey! I'm <a href="https://www.github.com/jemcv" target="_blank">Jem</a>, Welcome to my personal <a href=http://motherfuckingwebsite.com target="_blank">website</a>. This is where I'm going to put my <a href="{{ get_url(path="@/codes/_index.md") }}">codes</a> and my <a href="{{ get_url(path="@/posts/_index.md") }}">posts</a>. My plan is to post my codes here and to write some things then post it here.</p>
+        <p>
+          I use <a href="https://archlinux.org/" target="_blank">arch</a> btw. From what I've experienced setting it up, Arch Linux  is an operating system which you need to configure it from scratch to have a working desktop.
+          I'm currently using it for one month and decided to use a window manager. The window manager I use is dwm. "dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed" copied from the suckless website. >_< 
+        </p>
+        <p>
+          My dwm build currently has 5 patches to improve my workflow. I just started using arch and I know I still have a lot of things to explore in this cave. This makes me more excited to tinker things and explore technology especially in the FOSS world. I'm writing this in 08-08-2022 and probably rewrote this after a year.
+          :)
+        </p>
+        <p>
+          The other tools I use is a menu also from the suckless.org called dmenu, basically an app launcher, I haven't patched it yet but I added pywal to it. Pywal is used for generating colors from an image/background. For the status bar, I'm using dwmblocks where you can use shell scripts to retrieve information from your os and the bar will display it.
+        </p>
+        <p>
+          Why do I have this website? The reason for this is I want to have a minimal website and leave my old <a href="https://jekyllrb.com/">jekkyl</a> theme site where I depended on a library just to have a cool window opening when you click a link, btw this is the website that I am talking to, <a href="https://github.com/jemcv/el-terminal" target="_blank">el-terminal</a>. Now my website is built with <a href="https://www.getzola.org/" target="_blank">zola</a>, a static site generator written in rust .
+        </p>
+        <p>
+          If you want to look for my build, these are the links below.
+        </p>
+    </section>
+    <section>
+    <p><a href="https://github.com/jemcv/dwm" target="_blank">dwm</a>&nbsp<a href="https://github.com/jemcv/dmenu" target="_blank">dmenu</a>&nbsp<a href="https://github.com/jemcv/dwmblocks" target="_blank">dwmblocks</a></p>
+    </section>
+  </main>
+  <!-- 
+  <footer>
+    <hr>
+      <a href="https://landchad.net" target="_blank"><img src="https://landchad.net/pix/landchad.gif" alt="LandChad.net"></a>
+      <a href="https://www.gnu.org/" target="_blank"><img src="https://www.gnu.org/graphics/bvbn/gnu-lug.png" alt="gnu.org"></a>
+      <a href="https://learn.sadgrl.online/" target="_blank"><img src="https://learn.sadgrl.online/wp-content/uploads/2021/12/learn-button.gif" alt="https://learn.sadgrl.online/"> </a>
+    <div>
+      © Copyright 2022 Jem. All rights reserved.
+    </div>
+    <footer>
+  -->
+{% endblock content %}
