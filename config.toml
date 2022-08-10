@@ -27,5 +27,5 @@ smart_punctuation = true
 favicon = "images/favicon.png"
 joker = "images/joker.gif"
 gnu = "images/gnu.png"
-notepad = "images/notepad.gif"
+notepad = "images/notepad.png"
 arch = "images/arch.png"
