@@ -24,8 +24,4 @@ smart_punctuation = true
 
 [extra]
 # Put all your custom variables here
-favicon = "images/favicon.png"
 joker = "images/joker.gif"
-gnu = "images/gnu.png"
-notepad = "images/notepad.png"
-arch = "images/arch.png"
