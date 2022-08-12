@@ -1,6 +1,7 @@
 +++
 title = " whoami "
 template = "about.html"
+image: gnu.png, 
 date = 2021-02-28
 +++
 
@@ -27,7 +28,7 @@ Sometimes I code but I mostly spend my time improving my touch typing.
                  ---------------------------------------------  
                             my ascii art of 60keyb
                         
-                i have a 60 percent keyboard and i love typing :)
+            i use a 60 percent keyboard for practicing touch typing
 
                                my current best
 
