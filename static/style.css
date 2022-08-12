@@ -13,7 +13,7 @@
 
 @font-face {
     font-family: "Hack Nerd Font";
-    src: url(/static/fonts/hrnf.ttf);
+    src: url(./fonts/hrnf.ttf);
 }
 
 /* Default */
