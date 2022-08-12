@@ -16,15 +16,9 @@
     src: url(/static/fonts/hrnf.ttf);
 }
 
-@font-face {
-    font-family: "Fira Code Nerd Font";
-    src: url(/static/fonts/fcrnf.ttf);
-
-}
-
 /* Default */
 body {
-    font-family: 'Hack Nerd Font', "Fira Code Nerd Font", monospace;
+    font-family: 'Hack Nerd Font';
     background-color: var(--bb-color);
     color: var(--wt-color);
     margin-right: auto;
