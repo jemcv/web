@@ -42,9 +42,17 @@ nav > a {
     color: var(--gb-color);
 }
 
+nav>a:hover {
+    color: var(--gc-color);
+
+}
 a {
     text-decoration: none;
     color: var(--gc-color);
+}
+
+a:hover {
+    color: var(--bl-color);
 }
 
 hr {
@@ -98,6 +106,10 @@ div.copyright {
 
 div.copyright > a {
     color: var(--gb-color);
+}
+
+div.copyright>a:hover {
+    color: var(--gc-color);
 }
 
 div.ascii {
