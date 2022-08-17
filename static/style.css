@@ -25,10 +25,12 @@ body {
     margin-left: auto;
     max-width: 50rem;
     font-size: 16px;
+    padding: 0 1.25rem 1.25rem 1.25rem;
 }
 
 nav {
     display: flex;
+    font-size: 18px;
     justify-content: space-around;
     font-family: 'Hack Nerd Font';
     text-decoration: none;
