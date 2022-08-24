@@ -25,3 +25,4 @@ smart_punctuation = true
 [extra]
 # Put all your custom variables here
 joker = "images/joker.gif"
+favicon = "images/favicon.png"
