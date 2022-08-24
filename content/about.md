@@ -5,7 +5,7 @@ date = 2021-02-28
 +++
 
 #### Introduction 
-I'm Jem, just a simple man whose dream and goal is to have a good life and to be knowledgeable in technology. I'm currently pursuing Bachelor of Science in Information Technology in a university.
+I'm Jem, just a simple man whose dream and goal are to have a good life and to be knowledgeable in technology. I’m currently pursuing a Bachelor of Science in Information Technology at a university.
 
 #### Operating System
 I'm using Arch Linux as my operating system on my laptop and Windows 11 on my desktop.
