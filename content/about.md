@@ -17,7 +17,7 @@ The game I spent most of my time playing back then is LoL (League of Legends). A
 My current interest is creating CLI applications, automation with python, and linux.
 
 #### What I do? 
-When I have free time, I spend my time improving my touch typing, and sometimes coding. <a href="https://monkeytype.com/profile/GGUvYwIfXagWcUMl8z42aqWdMAr2">monkeytype account</a>
+When I have free time, I spend my time improving my touch typing and sometimes coding. <a href="https://monkeytype.com/profile/GGUvYwIfXagWcUMl8z42aqWdMAr2">monkeytype account</a>
 ```go
                  ---------------------------------------------    
                 |[ESC][1][2][3][4][5][6][7][8][9][0][-][=][<-]|
