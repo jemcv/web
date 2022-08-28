@@ -5,9 +5,9 @@
   {{ section.title }}
 </h3>
 <ul>
-  <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->  
+  <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object <span class="bracket">[ </span> <span class="bracket"> ]</span>-->   
   {% for page in section.pages %}
-  <li><a href="{{ page.permalink | safe }}"><span class="bracket">[ </span>{{ page.title }}<span class="bracket"> ]</span></a>{{ page.date | date(format="%m-%d-%Y") }}</li>
+  <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a>{{ page.date | date(format="%m-%d-%Y") }}</li>
   {% endfor %}
 </ul>
 {% endblock content %}
