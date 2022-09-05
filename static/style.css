@@ -68,7 +68,7 @@ a:hover {
 }
 
 hr {
-    border: 8px dashed var(--ga-color);
+    border: 5px dashed var(--ga-color);
     animation-name: animhr;
     animation-duration: 1s;
 /*  animation-iteration-count: infinite; */
@@ -133,12 +133,17 @@ div.ascii {
 div.info {
     display: flex;
     justify-content: space-between;
-    
+    margin-top: 1rem;
 }
 
 div.joker {
     border: 3px solid var(--gc-color);
     padding: 5px;
+}
+
+div.joker > img {
+    width: 100%;
+    height: 120px;
 }
 
 /* Div End */
