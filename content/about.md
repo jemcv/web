@@ -4,8 +4,8 @@ template = "about.html"
 date = 2021-02-28
 +++
 
-<div class="about-div">
-<img class="about-img" src="/deathnote.gif">
+<div class="md-div">
+<img class="md-img" src="https://c.tenor.com/dzenlM_bTtYAAAAC/death-anime.gif">
 </div>
 
 

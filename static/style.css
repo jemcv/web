@@ -145,14 +145,14 @@ div.joker > img {
     height: 120px;
 }
 
-div > .about-div{
+div > .md-div{
     display: flex;
-    height: 120px;
     justify-content: center;
 }
 
-div > .about-img{
+div > .md-img{
     border: 3px solid var(--gc-color);
+    height: 120px;
 }
 /* Div End */
 
