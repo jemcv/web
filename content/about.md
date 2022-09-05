@@ -4,6 +4,11 @@ template = "about.html"
 date = 2021-02-28
 +++
 
+<div class="about-div">
+<img class="about-img" src="/images/gifs/deathnote.gif">
+</div>
+
+
 #### Introduction 
 I'm Jem, just a simple man whose dream and goal are to have a good life and to be knowledgeable in technology. I’m currently pursuing a Bachelor of Science in Information Technology at university.
 

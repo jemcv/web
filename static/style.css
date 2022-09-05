@@ -138,7 +138,6 @@ div.info {
 
 div.joker {
     border: 3px solid var(--gc-color);
-    padding: 5px;
 }
 
 div.joker > img {
@@ -146,6 +145,15 @@ div.joker > img {
     height: 120px;
 }
 
+div > .about-div{
+    display: flex;
+    height: 120px;
+    justify-content: center;
+}
+
+div > .about-img{
+    border: 3px solid var(--gc-color);
+}
 /* Div End */
 
 /*
