@@ -5,7 +5,7 @@ date = 2021-02-28
 +++
 
 <div class="about-div">
-<img class="about-img" src="/images/gifs/deathnote.gif">
+<img class="about-img" src="/deathnote.gif">
 </div>
 
 
