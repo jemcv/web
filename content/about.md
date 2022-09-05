@@ -19,7 +19,7 @@ I'm using Arch Linux as my operating system on my laptop and Windows 11 on my de
 The game I spent most of my time playing back then is LoL (League of Legends). Another game is DotA (Defense of the Ancients), my childhood game where I played different maps including BVO (Bleach vs Onepiece), DON (DragonBall, Onepiece, Naruto), Pudge Wars, Mirana Wars, Axe Wars, and the classic Dota map.
 
 #### Interest
-My current interest is creating CLI applications, automation with python, and linux.
+My current interest is creating CLI applications, scripting with python, and linux.
 
 #### What I do? 
 When I have free time, I spend my time improving my touch typing and sometimes coding. <a href="https://monkeytype.com/profile/GGUvYwIfXagWcUMl8z42aqWdMAr2">monkeytype account</a>
