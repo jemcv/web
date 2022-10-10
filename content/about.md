@@ -13,7 +13,7 @@ date = 2021-02-28
 I'm Jem, just a simple man whose dream and goal are to have a good life and to be knowledgeable in technology. I’m currently pursuing a Bachelor of Science in Information Technology at university.
 
 #### What I do? 
-When I have free time, I spend my time improving my touch typing and sometimes coding. <a href="https://monkeytype.com/profile/GGUvYwIfXagWcUMl8z42aqWdMAr2">monkeytype account</a>
+When I have free time, I spend my time improving my touch typing and sometimes coding. <a href="https://monkeytype.com/profile/paralyzedrhand">monkeytype account</a>
 ```go
                  ---------------------------------------------    
                 |[ESC][1][2][3][4][5][6][7][8][9][0][-][=][<-]|
