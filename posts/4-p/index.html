@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jemcv</title>
+  <link rel="stylesheet" href="https://jemcv.github.io/web/style.css">
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://jemcv.github.io/web/rss.xml">
+  
+  
+  <link rel="icon" sizes="16x16" type="image/png" href="https://jemcv.github.io/web/images/favicon.png"/>
+  
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <nav>
+        <a href="https://jemcv.github.io/web/"><span class="bracket">[</span>  home <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/codes/"><span class="bracket">[</span>  code <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/about/"><span class="bracket">[</span>  about <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/posts/"><span class="bracket">[</span>  post <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/contact/"><span class="bracket">[</span>  contact <span class="bracket">]</span></a>
+      </nav>
+    <hr id="hr-top">
+      
+<h3 class="title">
+  touchpad&#x2F;libinput
+</h3>
+<p class="subtitle"><strong> 08-02-2022</strong></p>
+<p>My touchpad configuration</p>
+<pre data-lang="conf" style="background-color:#282c34;color:#dcdfe4;" class="language-conf "><code class="language-conf" data-lang="conf"><span style="color:#5c6370;"># Match on all types of devices but joysticks
+</span><span style="color:#5c6370;">#
+</span><span style="color:#5c6370;"># If you want to configure your devices, do not copy this file.
+</span><span style="color:#5c6370;"># Instead, use a config snippet that contains something like this:
+</span><span style="color:#5c6370;">#
+</span><span style="color:#5c6370;"># Section &quot;InputClass&quot;
+</span><span style="color:#5c6370;">#   Identifier &quot;something or other&quot;
+</span><span style="color:#5c6370;">#   MatchDriver &quot;libinput&quot;
+</span><span style="color:#5c6370;">#
+</span><span style="color:#5c6370;">#   MatchIsTouchpad &quot;on&quot;
+</span><span style="color:#5c6370;">#   ... other Match directives ...
+</span><span style="color:#5c6370;">#   Option &quot;someoption&quot; &quot;value&quot;
+</span><span style="color:#5c6370;"># EndSection
+</span><span style="color:#5c6370;">#
+</span><span style="color:#5c6370;"># This applies the option any libinput device also matched by the other
+</span><span style="color:#5c6370;"># directives. See the xorg.conf(5) man page for more info on
+</span><span style="color:#5c6370;"># matching devices.
+</span><span>
+</span><span style="color:#5c6370;"># This is located on /usr/share/X11/xorg.conf.d/40-libinput.conf
+</span><span style="color:#5c6370;"># My settings for touchpad
+</span><span>
+</span><span style="color:#e06c75;">Section </span><span style="color:#98c379;">&quot;InputClass&quot;
+</span><span>        </span><span style="color:#e06c75;">Identifier </span><span style="color:#98c379;">&quot;libinput pointer catchall&quot;
+</span><span>        </span><span style="color:#e06c75;">MatchIsPointer </span><span style="color:#98c379;">&quot;on&quot;
+</span><span>        </span><span style="color:#e06c75;">MatchDevicePath </span><span style="color:#98c379;">&quot;/dev/input/event*&quot;
+</span><span>        </span><span style="color:#e06c75;">Driver </span><span style="color:#98c379;">&quot;libinput&quot;
+</span><span style="color:#c678dd;">EndSection
+</span><span>
+</span><span style="color:#e06c75;">Section </span><span style="color:#98c379;">&quot;InputClass&quot;
+</span><span>        </span><span style="color:#e06c75;">Identifier </span><span style="color:#98c379;">&quot;libinput keyboard catchall&quot;
+</span><span>        </span><span style="color:#e06c75;">MatchIsKeyboard </span><span style="color:#98c379;">&quot;on&quot;
+</span><span>        </span><span style="color:#e06c75;">MatchDevicePath </span><span style="color:#98c379;">&quot;/dev/input/event*&quot;
+</span><span>        </span><span style="color:#e06c75;">Driver </span><span style="color:#98c379;">&quot;libinput&quot;
+</span><span style="color:#c678dd;">EndSection
+</span><span>
+</span><span style="color:#e06c75;">Section </span><span style="color:#98c379;">&quot;InputClass&quot;
+</span><span>        </span><span style="color:#e06c75;">Identifier </span><span style="color:#98c379;">&quot;libinput touchpad catchall&quot;
+</span><span>        </span><span style="color:#e06c75;">MatchIsTouchpad </span><span style="color:#98c379;">&quot;on&quot;
+</span><span>        </span><span style="color:#e06c75;">MatchDevicePath </span><span style="color:#98c379;">&quot;/dev/input/event*&quot;
+</span><span>	</span><span style="color:#e06c75;">Option </span><span style="color:#98c379;">&quot;Tapping&quot; &quot;on&quot;
+</span><span>	</span><span style="color:#e06c75;">Option </span><span style="color:#98c379;">&quot;NaturalScrolling&quot; &quot;true&quot;
+</span><span>        </span><span style="color:#e06c75;">Driver </span><span style="color:#98c379;">&quot;libinput&quot;
+</span><span style="color:#c678dd;">EndSection
+</span><span>
+</span><span style="color:#e06c75;">Section </span><span style="color:#98c379;">&quot;InputClass&quot;
+</span><span>        </span><span style="color:#e06c75;">Identifier </span><span style="color:#98c379;">&quot;libinput touchscreen catchall&quot;
+</span><span>        </span><span style="color:#e06c75;">MatchIsTouchscreen </span><span style="color:#98c379;">&quot;on&quot;
+</span><span>        </span><span style="color:#e06c75;">MatchDevicePath </span><span style="color:#98c379;">&quot;/dev/input/event*&quot;
+</span><span>        </span><span style="color:#e06c75;">Driver </span><span style="color:#98c379;">&quot;libinput&quot;
+</span><span style="color:#c678dd;">EndSection
+</span><span>
+</span><span style="color:#e06c75;">Section </span><span style="color:#98c379;">&quot;InputClass&quot;
+</span><span>        </span><span style="color:#e06c75;">Identifier </span><span style="color:#98c379;">&quot;libinput tablet catchall&quot;
+</span></code></pre>
+
+
+    </div>
+  </section>
+  <footer>
+    <hr class="hr-bot">
+      <a href="https://landchad.net" target="_blank"><img src="https://landchad.net/pix/landchad.gif" alt="landchad.net"></a>
+      <a href="https://www.gnu.org/" target="_blank"><img src="https://jemcv.github.io/web/images/gnu.png" alt="gnu.org"></a>
+      <a href="https://www.vim.org" target="_blank"><img src="https://jemcv.github.io/web/images/vim.gif"  alt="vim.org"></a>
+      <a href="https://archlinux.org/" target="_blank"><img src="https://jemcv.github.io/web/images/arch.png"  alt="archlinux.org"></a>
+      <a href="https://larbs.xyz/" target="_blank"><img src="https://larbs.xyz/pix/larbs.gif" alt="larbs.xyz"> </a>
+    <div class="copyright">
+      become someone <a href="https://github.com/jemcv" target="_blank">[  Jem ]</a> unlike everyone
+    </div>
+  <footer>
+</body>
+</html>

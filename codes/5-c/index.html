@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jemcv</title>
+  <link rel="stylesheet" href="https://jemcv.github.io/web/style.css">
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://jemcv.github.io/web/rss.xml">
+  
+  
+  <link rel="icon" sizes="16x16" type="image/png" href="https://jemcv.github.io/web/images/favicon.png"/>
+  
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <nav>
+        <a href="https://jemcv.github.io/web/"><span class="bracket">[</span>  home <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/codes/"><span class="bracket">[</span>  code <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/about/"><span class="bracket">[</span>  about <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/posts/"><span class="bracket">[</span>  post <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/contact/"><span class="bracket">[</span>  contact <span class="bracket">]</span></a>
+      </nav>
+    <hr id="hr-top">
+      
+<h3 class="title">
+  abstraction
+</h3>
+<p class="subtitle"><strong> 09-05-2022</strong></p>
+<p>abstraction in java</p>
+<pre data-lang="Java" style="background-color:#282c34;color:#dcdfe4;" class="language-Java "><code class="language-Java" data-lang="Java"><span style="color:#c678dd;">import </span><span>java.util.</span><span style="color:#e5c07b;">Scanner</span><span>;
+</span><span>
+</span><span style="color:#c678dd;">abstract class </span><span style="color:#e5c07b;">Animal </span><span>{ 
+</span><span>	</span><span style="color:#c678dd;">public abstract void </span><span style="color:#61afef;">eat</span><span>();
+</span><span>	</span><span style="color:#c678dd;">public abstract void </span><span style="color:#61afef;">sleep</span><span>();
+</span><span>	</span><span style="color:#c678dd;">public abstract void </span><span style="color:#61afef;">makeSound</span><span>();
+</span><span>}
+</span><span>
+</span><span style="color:#c678dd;">class </span><span style="color:#e5c07b;">Bird </span><span style="color:#c678dd;">extends </span><span style="color:#e5c07b;">Animal </span><span>{
+</span><span>	</span><span style="color:#c678dd;">public void </span><span style="color:#61afef;">eat</span><span>() {
+</span><span>		</span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Birds love to eat seeds.&quot;</span><span>);
+</span><span>	}
+</span><span>	
+</span><span>	</span><span style="color:#c678dd;">public void </span><span style="color:#61afef;">sleep</span><span>() {
+</span><span>		</span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Sleep for 10-12 hours a day.&quot;</span><span>);
+</span><span>	}
+</span><span>	
+</span><span>	</span><span style="color:#c678dd;">public void </span><span style="color:#61afef;">makeSound</span><span>() {
+</span><span>		</span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">print</span><span>(</span><span style="color:#98c379;">&quot;Tweet tweet tweet...&quot;</span><span>);
+</span><span>	}
+</span><span>}
+</span><span>
+</span><span style="color:#c678dd;">class </span><span style="color:#e5c07b;">Cat </span><span style="color:#c678dd;">extends </span><span style="color:#e5c07b;">Animal </span><span>{
+</span><span>	</span><span style="color:#c678dd;">public void </span><span style="color:#61afef;">eat</span><span>() {
+</span><span>		</span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Cats love to eat salmon.&quot;</span><span>);
+</span><span>	}
+</span><span>	
+</span><span>	</span><span style="color:#c678dd;">public void </span><span style="color:#61afef;">sleep</span><span>() {
+</span><span>		</span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Sleep for 12-14 hours a day.&quot;</span><span>);
+</span><span>	}
+</span><span>	
+</span><span>	</span><span style="color:#c678dd;">public void </span><span style="color:#61afef;">makeSound</span><span>() {
+</span><span>		</span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">print</span><span>(</span><span style="color:#98c379;">&quot;Meow meow meow...&quot;</span><span>);
+</span><span>	}
+</span><span>	
+</span><span>}
+</span><span>
+</span><span style="color:#c678dd;">class </span><span style="color:#e5c07b;">Dog </span><span style="color:#c678dd;">extends </span><span style="color:#e5c07b;">Animal </span><span>{
+</span><span>	</span><span style="color:#c678dd;">public void </span><span style="color:#61afef;">eat</span><span>() {
+</span><span>		</span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Dogs love to eat vegetables.&quot;</span><span>);
+</span><span>	}
+</span><span>	
+</span><span>	</span><span style="color:#c678dd;">public void </span><span style="color:#61afef;">sleep</span><span>() {
+</span><span>		</span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Sleep for 8-12 hours a day.&quot;</span><span>);
+</span><span>	}
+</span><span>	
+</span><span>	</span><span style="color:#c678dd;">public void </span><span style="color:#61afef;">makeSound</span><span>() {
+</span><span>		</span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">print</span><span>(</span><span style="color:#98c379;">&quot;Arf arf arf...&quot;</span><span>);
+</span><span>	}
+</span><span>	
+</span><span>}
+</span><span>
+</span><span style="color:#c678dd;">public class </span><span style="color:#e5c07b;">RunAnimal </span><span>{
+</span><span>
+</span><span>	</span><span style="color:#c678dd;">public static void </span><span style="color:#61afef;">main</span><span>(</span><span style="color:#e5c07b;">String</span><span style="color:#c678dd;">[] </span><span style="color:#e06c75;">args</span><span>) {
+</span><span>		</span><span style="color:#e5c07b;">Scanner</span><span> scan </span><span style="color:#c678dd;">= new </span><span style="color:#e5c07b;">Scanner</span><span>(</span><span style="color:#e5c07b;">System</span><span>.in);
+</span><span>		</span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Choose an animal. Press B for Bird, C for Cat, or D for Dog:&quot;</span><span>);
+</span><span>		</span><span style="color:#c678dd;">char</span><span> choice </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">next</span><span>().</span><span style="color:#e06c75;">charAt</span><span>(</span><span style="color:#e5c07b;">0</span><span>);
+</span><span>		</span><span style="color:#c678dd;">switch</span><span>(</span><span style="color:#e5c07b;">Character</span><span>.</span><span style="color:#e06c75;">toUpperCase</span><span>(choice)) {
+</span><span>		  </span><span style="color:#c678dd;">case </span><span style="color:#98c379;">&#39;B&#39;</span><span style="color:#c678dd;">:
+</span><span>			  </span><span style="color:#e5c07b;">Bird</span><span> b </span><span style="color:#c678dd;">= new </span><span style="color:#e5c07b;">Bird</span><span>();
+</span><span>			  b.</span><span style="color:#e06c75;">eat</span><span>();
+</span><span>			  b.</span><span style="color:#e06c75;">sleep</span><span>();
+</span><span>			  b.</span><span style="color:#e06c75;">makeSound</span><span>();
+</span><span>		    </span><span style="color:#c678dd;">break</span><span>;
+</span><span>		  </span><span style="color:#c678dd;">case </span><span style="color:#98c379;">&#39;C&#39;</span><span style="color:#c678dd;">:
+</span><span>			  </span><span style="color:#e5c07b;">Cat</span><span> c </span><span style="color:#c678dd;">= new </span><span style="color:#e5c07b;">Cat</span><span>();
+</span><span>			  c.</span><span style="color:#e06c75;">eat</span><span>();
+</span><span>			  c.</span><span style="color:#e06c75;">sleep</span><span>();
+</span><span>			  c.</span><span style="color:#e06c75;">makeSound</span><span>();
+</span><span>			</span><span style="color:#c678dd;">break</span><span>;
+</span><span>		  </span><span style="color:#c678dd;">case </span><span style="color:#98c379;">&#39;D&#39;</span><span style="color:#c678dd;">:
+</span><span>			</span><span style="color:#e5c07b;">Dog</span><span> d </span><span style="color:#c678dd;">= new </span><span style="color:#e5c07b;">Dog</span><span>();
+</span><span>			  d.</span><span style="color:#e06c75;">eat</span><span>();
+</span><span>			  d.</span><span style="color:#e06c75;">sleep</span><span>();
+</span><span>			  d.</span><span style="color:#e06c75;">makeSound</span><span>();
+</span><span>			  </span><span style="color:#c678dd;">break</span><span>;
+</span><span>		  </span><span style="color:#c678dd;">default:
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">print</span><span>(</span><span style="color:#98c379;">&quot;Invalid input, please restart the program.&quot;</span><span>);
+</span><span>		}		
+</span><span>	}
+</span><span>}
+</span><span>
+</span></code></pre>
+
+
+    </div>
+  </section>
+  <footer>
+    <hr class="hr-bot">
+      <a href="https://landchad.net" target="_blank"><img src="https://landchad.net/pix/landchad.gif" alt="landchad.net"></a>
+      <a href="https://www.gnu.org/" target="_blank"><img src="https://jemcv.github.io/web/images/gnu.png" alt="gnu.org"></a>
+      <a href="https://www.vim.org" target="_blank"><img src="https://jemcv.github.io/web/images/vim.gif"  alt="vim.org"></a>
+      <a href="https://archlinux.org/" target="_blank"><img src="https://jemcv.github.io/web/images/arch.png"  alt="archlinux.org"></a>
+      <a href="https://larbs.xyz/" target="_blank"><img src="https://larbs.xyz/pix/larbs.gif" alt="larbs.xyz"> </a>
+    <div class="copyright">
+      become someone <a href="https://github.com/jemcv" target="_blank">[  Jem ]</a> unlike everyone
+    </div>
+  <footer>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jemcv</title>
+  <link rel="stylesheet" href="https://jemcv.github.io/web/style.css">
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://jemcv.github.io/web/rss.xml">
+  
+  
+  <link rel="icon" sizes="16x16" type="image/png" href="https://jemcv.github.io/web/images/favicon.png"/>
+  
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <nav>
+        <a href="https://jemcv.github.io/web/"><span class="bracket">[</span>  home <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/codes/"><span class="bracket">[</span>  code <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/about/"><span class="bracket">[</span>  about <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/posts/"><span class="bracket">[</span>  post <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/contact/"><span class="bracket">[</span>  contact <span class="bracket">]</span></a>
+      </nav>
+    <hr id="hr-top">
+      
+<h3 class="title">
+  time converter
+</h3>
+<p class="subtitle"><strong> 06-01-2021</strong></p>
+<p>freshmen year (second semester) project where we need to create a cli application with different application of data structures in C++.</p>
+<h4 id="using-variables">using variables</h4>
+<pre data-lang="C++" style="background-color:#282c34;color:#dcdfe4;" class="language-C++ "><code class="language-C++" data-lang="C++"><span style="color:#c678dd;">#include </span><span style="color:#98c379;">&lt;iostream&gt;
+</span><span style="color:#c678dd;">using namespace</span><span> std;
+</span><span style="color:#c678dd;">int</span><span> opt;
+</span><span style="color:#c678dd;">double</span><span> day, hrs, mins, sec, totalDay, totalHrs, totalMins, totalSec;
+</span><span>
+</span><span style="color:#5c6370;">//Time Converter
+</span><span style="color:#c678dd;">int </span><span style="color:#61afef;">main</span><span>(){
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Welcome to Time Converter Console </span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[1] Days to Hours </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[2] Hours to Minutes </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[3] Minutes to Seconds </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[4] Seconds to Minutes </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[5] Exit </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">What do yo want to convert?(1-5): &quot;</span><span>;
+</span><span>    cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>opt;
+</span><span>
+</span><span>    </span><span style="color:#c678dd;">switch</span><span>(opt){
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">1</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Days to Hours</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Input days: &quot;</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>day;
+</span><span>            totalDay </span><span style="color:#c678dd;">=</span><span> day </span><span style="color:#c678dd;">* </span><span style="color:#e5c07b;">24</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Hours: &quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>totalDay</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">2</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Hours to Minutes</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Input hours: &quot;</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>hrs;
+</span><span>            totalHrs </span><span style="color:#c678dd;">=</span><span> hrs </span><span style="color:#c678dd;">* </span><span style="color:#e5c07b;">60</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Minutes: &quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>totalHrs</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">3</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Minutes to Seconds</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Input Minutes: &quot;</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>mins;
+</span><span>            totalMins </span><span style="color:#c678dd;">=</span><span> mins </span><span style="color:#c678dd;">* </span><span style="color:#e5c07b;">60</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Seconds: &quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>totalMins</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>        
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">4</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Seconds to Minutes:</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Input seconds: &quot;</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>sec;
+</span><span>            totalSec </span><span style="color:#c678dd;">=</span><span> sec </span><span style="color:#c678dd;">/ </span><span style="color:#e5c07b;">60</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Minutes: &quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>totalSec</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">5</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Thank you for using the application.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#61afef;">exit</span><span>(</span><span style="color:#e5c07b;">0</span><span>);
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>
+</span><span>        </span><span style="color:#c678dd;">default</span><span>: 
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;None of the options.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;"> Restart the app.&quot;</span><span>;
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<h4 id="in-array">in array</h4>
+<pre data-lang="C++" style="background-color:#282c34;color:#dcdfe4;" class="language-C++ "><code class="language-C++" data-lang="C++"><span style="color:#c678dd;">#include </span><span style="color:#98c379;">&lt;iostream&gt;
+</span><span style="color:#c678dd;">using namespace</span><span> std;
+</span><span style="color:#c678dd;">int</span><span> opt;
+</span><span style="color:#c678dd;">double</span><span> choices[</span><span style="color:#e5c07b;">3</span><span>], total[</span><span style="color:#e5c07b;">3</span><span>];
+</span><span>
+</span><span style="color:#5c6370;">//Time Converter in Array
+</span><span style="color:#c678dd;">int </span><span style="color:#61afef;">main</span><span>(){
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Welcome to Time Converter Console </span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[1] Days to Hours </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[2] Hours to Minutes </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[3] Minutes to Seconds </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[4] Seconds to Minutes </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[5] Exit </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">What do yo want to convert?(1-5): &quot;</span><span>;
+</span><span>    cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>opt;
+</span><span>
+</span><span>    </span><span style="color:#c678dd;">switch</span><span>(opt){
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">1</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Days to Hours</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Input days: &quot;</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>choices[</span><span style="color:#e5c07b;">0</span><span>];
+</span><span>            total[</span><span style="color:#e5c07b;">0</span><span>] </span><span style="color:#c678dd;">=</span><span> choices[</span><span style="color:#e5c07b;">0</span><span>] </span><span style="color:#c678dd;">* </span><span style="color:#e5c07b;">24</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Hours: &quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>total[</span><span style="color:#e5c07b;">0</span><span>]</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">2</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Hours to Minutes</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Input hours: &quot;</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>choices[</span><span style="color:#e5c07b;">1</span><span>];
+</span><span>            total[</span><span style="color:#e5c07b;">1</span><span>] </span><span style="color:#c678dd;">=</span><span> choices[</span><span style="color:#e5c07b;">1</span><span>] </span><span style="color:#c678dd;">* </span><span style="color:#e5c07b;">60</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Minutes: &quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>total[</span><span style="color:#e5c07b;">1</span><span>]</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">3</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Minutes to Seconds</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Input Minutes: &quot;</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>choices[</span><span style="color:#e5c07b;">2</span><span>];
+</span><span>            total[</span><span style="color:#e5c07b;">2</span><span>] </span><span style="color:#c678dd;">=</span><span> choices[</span><span style="color:#e5c07b;">2</span><span>] </span><span style="color:#c678dd;">* </span><span style="color:#e5c07b;">60</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Seconds: &quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>total[</span><span style="color:#e5c07b;">2</span><span>]</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>        
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">4</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Seconds to Minutes:</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Input seconds: &quot;</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>choices[</span><span style="color:#e5c07b;">3</span><span>];
+</span><span>            total[</span><span style="color:#e5c07b;">3</span><span>] </span><span style="color:#c678dd;">=</span><span> choices[</span><span style="color:#e5c07b;">3</span><span>] </span><span style="color:#c678dd;">/ </span><span style="color:#e5c07b;">60</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Minutes: &quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>total[</span><span style="color:#e5c07b;">3</span><span>]</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">5</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Thank you for using the application.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#61afef;">exit</span><span>(</span><span style="color:#e5c07b;">0</span><span>);
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>
+</span><span>        </span><span style="color:#c678dd;">default</span><span>: 
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;None of the options.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;"> Restart the app.&quot;</span><span>;
+</span><span>    }
+</span><span>    
+</span><span>}
+</span></code></pre>
+<h4 id="using-pointers">using pointers</h4>
+<pre data-lang="C++" style="background-color:#282c34;color:#dcdfe4;" class="language-C++ "><code class="language-C++" data-lang="C++"><span style="color:#c678dd;">#include </span><span style="color:#98c379;">&lt;iostream&gt;
+</span><span style="color:#c678dd;">using namespace</span><span> std;
+</span><span style="color:#c678dd;">int</span><span> opt;
+</span><span style="color:#c678dd;">double</span><span> choices[</span><span style="color:#e5c07b;">3</span><span>], </span><span style="color:#c678dd;">*</span><span>c, total[</span><span style="color:#e5c07b;">3</span><span>], </span><span style="color:#c678dd;">*</span><span>t;
+</span><span>
+</span><span style="color:#5c6370;">//Time Converter in Pointer
+</span><span style="color:#c678dd;">int </span><span style="color:#61afef;">main</span><span>(){
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Welcome to Time Converter Console </span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[1] Days to Hours </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[2] Hours to Minutes </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[3] Minutes to Seconds </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[4] Seconds to Minutes </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[5] Exit </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">What do yo want to convert?(1-5): &quot;</span><span>;
+</span><span>    cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>opt;
+</span><span>
+</span><span>    </span><span style="color:#c678dd;">switch</span><span>(opt){
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">1</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Days to Hours</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Input days: &quot;</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;*</span><span>c;
+</span><span>            </span><span style="color:#c678dd;">*</span><span>t </span><span style="color:#c678dd;">= *</span><span>c </span><span style="color:#c678dd;">* </span><span style="color:#e5c07b;">24</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Hours: &quot;</span><span style="color:#c678dd;">&lt;&lt;*</span><span>t</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">2</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Hours to Minutes</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Input hours: &quot;</span><span>;
+</span><span>            c</span><span style="color:#c678dd;">++</span><span>;t</span><span style="color:#c678dd;">++</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;*</span><span>c;
+</span><span>            </span><span style="color:#c678dd;">*</span><span>t </span><span style="color:#c678dd;">= *</span><span>c </span><span style="color:#c678dd;">* </span><span style="color:#e5c07b;">60</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Minutes: &quot;</span><span style="color:#c678dd;">&lt;&lt;*</span><span>t</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">3</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Minutes to Seconds</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Input Minutes: &quot;</span><span>;
+</span><span>            c</span><span style="color:#c678dd;">+=</span><span style="color:#e5c07b;">2</span><span>;t</span><span style="color:#c678dd;">+=</span><span style="color:#e5c07b;">2</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;*</span><span>c;
+</span><span>            </span><span style="color:#c678dd;">*</span><span>t </span><span style="color:#c678dd;">= *</span><span>c </span><span style="color:#c678dd;">* </span><span style="color:#e5c07b;">60</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Seconds: &quot;</span><span style="color:#c678dd;">&lt;&lt;*</span><span>t</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>        
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">4</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Seconds to Minutes:</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Input seconds: &quot;</span><span>;
+</span><span>            c</span><span style="color:#c678dd;">+=</span><span style="color:#e5c07b;">3</span><span>;t</span><span style="color:#c678dd;">+=</span><span style="color:#e5c07b;">3</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;*</span><span>c;
+</span><span>            </span><span style="color:#c678dd;">*</span><span>t </span><span style="color:#c678dd;">= *</span><span>c </span><span style="color:#c678dd;">/ </span><span style="color:#e5c07b;">60</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Minutes: &quot;</span><span style="color:#c678dd;">&lt;&lt;*</span><span>t</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">5</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Thank you for using the application.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#61afef;">exit</span><span>(</span><span style="color:#e5c07b;">0</span><span>);
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>
+</span><span>        </span><span style="color:#c678dd;">default</span><span>: 
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;None of the options.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;"> Restart the app.&quot;</span><span>;
+</span><span>    }
+</span><span>    
+</span><span>}
+</span></code></pre>
+<h4 id="application-in-struct">application in struct</h4>
+<pre data-lang="C++" style="background-color:#282c34;color:#dcdfe4;" class="language-C++ "><code class="language-C++" data-lang="C++"><span style="color:#c678dd;">#include </span><span style="color:#98c379;">&lt;iostream&gt;
+</span><span style="color:#c678dd;">using namespace</span><span> std;
+</span><span style="color:#c678dd;">int</span><span> opt;
+</span><span style="color:#c678dd;">struct </span><span>convert{
+</span><span>    </span><span style="color:#c678dd;">double</span><span> choices, total;
+</span><span>};
+</span><span style="color:#c678dd;">struct</span><span> convert conv[</span><span style="color:#e5c07b;">3</span><span>];
+</span><span>
+</span><span style="color:#5c6370;">//Time Converter in Struct
+</span><span style="color:#c678dd;">int </span><span style="color:#61afef;">main</span><span>(){
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Welcome to Time Converter Console </span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[1] Days to Hours </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[2] Hours to Minutes </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[3] Minutes to Seconds </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[4] Seconds to Minutes </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[5] Exit </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">What do yo want to convert?(1-5): &quot;</span><span>;
+</span><span>    cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>opt;
+</span><span>
+</span><span>    </span><span style="color:#c678dd;">switch</span><span>(opt){
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">1</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Days to Hours</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Input days: &quot;</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>conv[</span><span style="color:#e5c07b;">0</span><span>].</span><span style="color:#e06c75;">choices</span><span>;
+</span><span>            conv[</span><span style="color:#e5c07b;">0</span><span>].</span><span style="color:#e06c75;">total </span><span style="color:#c678dd;">=</span><span> conv[</span><span style="color:#e5c07b;">0</span><span>].</span><span style="color:#e06c75;">choices </span><span style="color:#c678dd;">* </span><span style="color:#e5c07b;">24</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Hours: &quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>conv[</span><span style="color:#e5c07b;">0</span><span>].</span><span style="color:#e06c75;">total</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">2</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Hours to Minutes</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Input hours: &quot;</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>conv[</span><span style="color:#e5c07b;">1</span><span>].</span><span style="color:#e06c75;">choices</span><span>;
+</span><span>            conv[</span><span style="color:#e5c07b;">1</span><span>].</span><span style="color:#e06c75;">total </span><span style="color:#c678dd;">=</span><span> conv[</span><span style="color:#e5c07b;">1</span><span>].</span><span style="color:#e06c75;">choices </span><span style="color:#c678dd;">* </span><span style="color:#e5c07b;">60</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Minutes: &quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>conv[</span><span style="color:#e5c07b;">1</span><span>].</span><span style="color:#e06c75;">total</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">3</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Minutes to Seconds</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Input Minutes: &quot;</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>conv[</span><span style="color:#e5c07b;">2</span><span>].</span><span style="color:#e06c75;">choices</span><span>;
+</span><span>            conv[</span><span style="color:#e5c07b;">2</span><span>].</span><span style="color:#e06c75;">total </span><span style="color:#c678dd;">=</span><span> conv[</span><span style="color:#e5c07b;">2</span><span>].</span><span style="color:#e06c75;">choices </span><span style="color:#c678dd;">* </span><span style="color:#e5c07b;">60</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Seconds: &quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>conv[</span><span style="color:#e5c07b;">2</span><span>].</span><span style="color:#e06c75;">total</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>        
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">4</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Seconds to Minutes:</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Input seconds: &quot;</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>conv[</span><span style="color:#e5c07b;">3</span><span>].</span><span style="color:#e06c75;">choices</span><span>;
+</span><span>            conv[</span><span style="color:#e5c07b;">3</span><span>].</span><span style="color:#e06c75;">total </span><span style="color:#c678dd;">=</span><span> conv[</span><span style="color:#e5c07b;">3</span><span>].</span><span style="color:#e06c75;">choices </span><span style="color:#c678dd;">/ </span><span style="color:#e5c07b;">60</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Minutes: &quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>conv[</span><span style="color:#e5c07b;">3</span><span>].</span><span style="color:#e06c75;">total</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>
+</span><span>        </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">5</span><span>:
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Thank you for using the application.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            </span><span style="color:#61afef;">exit</span><span>(</span><span style="color:#e5c07b;">0</span><span>);
+</span><span>            </span><span style="color:#c678dd;">break</span><span>;
+</span><span>
+</span><span>        </span><span style="color:#c678dd;">default</span><span>: 
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;None of the options.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;"> Restart the app.&quot;</span><span>;
+</span><span>    }
+</span><span>
+</span><span>}
+</span></code></pre>
+
+
+    </div>
+  </section>
+  <footer>
+    <hr class="hr-bot">
+      <a href="https://landchad.net" target="_blank"><img src="https://landchad.net/pix/landchad.gif" alt="landchad.net"></a>
+      <a href="https://www.gnu.org/" target="_blank"><img src="https://jemcv.github.io/web/images/gnu.png" alt="gnu.org"></a>
+      <a href="https://www.vim.org" target="_blank"><img src="https://jemcv.github.io/web/images/vim.gif"  alt="vim.org"></a>
+      <a href="https://archlinux.org/" target="_blank"><img src="https://jemcv.github.io/web/images/arch.png"  alt="archlinux.org"></a>
+      <a href="https://larbs.xyz/" target="_blank"><img src="https://larbs.xyz/pix/larbs.gif" alt="larbs.xyz"> </a>
+    <div class="copyright">
+      become someone <a href="https://github.com/jemcv" target="_blank">[  Jem ]</a> unlike everyone
+    </div>
+  <footer>
+</body>
+</html>

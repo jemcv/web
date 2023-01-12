@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jemcv</title>
+  <link rel="stylesheet" href="https://jemcv.github.io/web/style.css">
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://jemcv.github.io/web/rss.xml">
+  
+  
+  <link rel="icon" sizes="16x16" type="image/png" href="https://jemcv.github.io/web/images/favicon.png"/>
+  
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <nav>
+        <a href="https://jemcv.github.io/web/"><span class="bracket">[</span>  home <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/codes/"><span class="bracket">[</span>  code <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/about/"><span class="bracket">[</span>  about <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/posts/"><span class="bracket">[</span>  post <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/contact/"><span class="bracket">[</span>  contact <span class="bracket">]</span></a>
+      </nav>
+    <hr id="hr-top">
+      
+<h3 class="title">
+  inheritance
+</h3>
+<p class="subtitle"><strong> 09-05-2022</strong></p>
+<p>inheritance in java</p>
+<pre data-lang="Java" style="background-color:#282c34;color:#dcdfe4;" class="language-Java "><code class="language-Java" data-lang="Java"><span style="color:#c678dd;">import </span><span>java.util.</span><span style="color:#e5c07b;">Scanner</span><span>;
+</span><span>
+</span><span style="color:#c678dd;">class </span><span style="color:#e5c07b;">Person </span><span>{
+</span><span>	</span><span style="color:#c678dd;">private </span><span style="color:#e5c07b;">String </span><span>name;
+</span><span>	</span><span style="color:#c678dd;">private </span><span style="color:#e5c07b;">String </span><span>contactNum;	 
+</span><span>	
+</span><span>	</span><span style="color:#c678dd;">public void </span><span style="color:#61afef;">setName</span><span>(</span><span style="color:#e5c07b;">String </span><span style="color:#e06c75;">name</span><span>){
+</span><span>		</span><span style="color:#e06c75;">this</span><span>.name </span><span style="color:#c678dd;">=</span><span> name;
+</span><span>	}
+</span><span>
+</span><span>	</span><span style="color:#c678dd;">public </span><span style="color:#e5c07b;">String </span><span style="color:#61afef;">getName</span><span>(){
+</span><span>		</span><span style="color:#c678dd;">return</span><span> name;
+</span><span>	}
+</span><span>	
+</span><span>	</span><span style="color:#c678dd;">public void </span><span style="color:#61afef;">setContactNum</span><span>(</span><span style="color:#e5c07b;">String </span><span style="color:#e06c75;">contactNum</span><span>) {
+</span><span>		</span><span style="color:#e06c75;">this</span><span>.contactNum </span><span style="color:#c678dd;">=</span><span> contactNum;
+</span><span>	}
+</span><span>	
+</span><span>	</span><span style="color:#c678dd;">public </span><span style="color:#e5c07b;">String </span><span style="color:#61afef;">getContactNum</span><span>() {
+</span><span>		</span><span style="color:#c678dd;">return</span><span> contactNum;
+</span><span>	}
+</span><span>	
+</span><span>}
+</span><span>
+</span><span style="color:#c678dd;">class </span><span style="color:#e5c07b;">Employee </span><span style="color:#c678dd;">extends </span><span style="color:#e5c07b;">Person</span><span>{
+</span><span>	</span><span style="color:#c678dd;">private double </span><span>salary;
+</span><span>	</span><span style="color:#c678dd;">private </span><span style="color:#e5c07b;">String </span><span>department;
+</span><span>	
+</span><span>	</span><span style="color:#c678dd;">public void </span><span style="color:#61afef;">setSalary</span><span>(</span><span style="color:#c678dd;">double </span><span style="color:#e06c75;">salary</span><span>) {
+</span><span>		</span><span style="color:#e06c75;">this</span><span>.salary </span><span style="color:#c678dd;">=</span><span> salary;
+</span><span>	}
+</span><span>	
+</span><span>	</span><span style="color:#c678dd;">public double </span><span style="color:#61afef;">getSalary</span><span>() {
+</span><span>		</span><span style="color:#c678dd;">return</span><span> salary;
+</span><span>	}
+</span><span>	
+</span><span>	</span><span style="color:#c678dd;">public void </span><span style="color:#61afef;">setDepartment</span><span>(</span><span style="color:#e5c07b;">String </span><span style="color:#e06c75;">department</span><span>) {
+</span><span>		</span><span style="color:#e06c75;">this</span><span>.department </span><span style="color:#c678dd;">=</span><span> department;
+</span><span>	}
+</span><span>	
+</span><span>	</span><span style="color:#c678dd;">public </span><span style="color:#e5c07b;">String </span><span style="color:#61afef;">getDepartment</span><span>() {
+</span><span>		</span><span style="color:#c678dd;">return</span><span> department;
+</span><span>	}
+</span><span>}
+</span><span>
+</span><span style="color:#c678dd;">class </span><span style="color:#e5c07b;">Student </span><span style="color:#c678dd;">extends </span><span style="color:#e5c07b;">Person</span><span>{
+</span><span>	</span><span style="color:#c678dd;">private </span><span style="color:#e5c07b;">String </span><span>program;
+</span><span>	</span><span style="color:#c678dd;">private int </span><span>yearLevel;
+</span><span>	
+</span><span>	</span><span style="color:#c678dd;">public void </span><span style="color:#61afef;">setProgram</span><span>(</span><span style="color:#e5c07b;">String </span><span style="color:#e06c75;">program</span><span>) {
+</span><span>		</span><span style="color:#e06c75;">this</span><span>.program </span><span style="color:#c678dd;">=</span><span> program;
+</span><span>	}
+</span><span>	
+</span><span>	</span><span style="color:#c678dd;">public </span><span style="color:#e5c07b;">String </span><span style="color:#61afef;">getProgram</span><span>() {
+</span><span>		</span><span style="color:#c678dd;">return</span><span> program;
+</span><span>	}
+</span><span>	
+</span><span>	</span><span style="color:#c678dd;">public void </span><span style="color:#61afef;">setYearLevel</span><span>(</span><span style="color:#c678dd;">int </span><span style="color:#e06c75;">yearLevel</span><span>) {
+</span><span>		</span><span style="color:#e06c75;">this</span><span>.yearLevel </span><span style="color:#c678dd;">=</span><span> yearLevel;
+</span><span>	}
+</span><span>	
+</span><span>	</span><span style="color:#c678dd;">public int </span><span style="color:#61afef;">getYearLevel</span><span>() {
+</span><span>		</span><span style="color:#c678dd;">return</span><span> yearLevel;
+</span><span>	}
+</span><span>}
+</span><span>
+</span><span style="color:#c678dd;">class </span><span style="color:#e5c07b;">Faculty </span><span style="color:#c678dd;">extends </span><span style="color:#e5c07b;">Employee</span><span>{
+</span><span>	</span><span style="color:#c678dd;">private boolean </span><span>status;
+</span><span>	
+</span><span>	</span><span style="color:#c678dd;">public void </span><span style="color:#61afef;">setStatus</span><span>(</span><span style="color:#c678dd;">boolean </span><span style="color:#e06c75;">status</span><span>) {
+</span><span>		</span><span style="color:#e06c75;">this</span><span>.status </span><span style="color:#c678dd;">=</span><span> status;
+</span><span>	}
+</span><span>	</span><span style="color:#c678dd;">public boolean </span><span style="color:#61afef;">isRegular</span><span>() {
+</span><span>		</span><span style="color:#c678dd;">return</span><span> status;
+</span><span>	}				
+</span><span>}
+</span><span>
+</span><span style="color:#c678dd;">public class </span><span style="color:#e5c07b;">CollegeList </span><span>{
+</span><span>
+</span><span>	</span><span style="color:#c678dd;">public static void </span><span style="color:#61afef;">main</span><span>(</span><span style="color:#e5c07b;">String</span><span style="color:#c678dd;">[] </span><span style="color:#e06c75;">args</span><span>) {
+</span><span>
+</span><span>		</span><span style="color:#e5c07b;">Scanner</span><span> scan </span><span style="color:#c678dd;">= new </span><span style="color:#e5c07b;">Scanner</span><span>(</span><span style="color:#e5c07b;">System</span><span>.in);
+</span><span>		</span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Press E for Employee, F for Faculty, or S for Student: &quot;</span><span>);
+</span><span>		</span><span style="color:#c678dd;">char</span><span> choice </span><span style="color:#c678dd;">=</span><span>  scan.</span><span style="color:#e06c75;">next</span><span>().</span><span style="color:#e06c75;">charAt</span><span>(</span><span style="color:#e5c07b;">0</span><span>);
+</span><span>		</span><span style="color:#c678dd;">switch</span><span>(</span><span style="color:#e5c07b;">Character</span><span>.</span><span style="color:#e06c75;">toUpperCase</span><span>(choice)) {
+</span><span>		  </span><span style="color:#c678dd;">case </span><span style="color:#98c379;">&#39;E&#39;</span><span style="color:#c678dd;">:
+</span><span>			  </span><span style="color:#e5c07b;">Employee</span><span> e </span><span style="color:#c678dd;">= new </span><span style="color:#e5c07b;">Employee</span><span>();
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">print</span><span>(</span><span style="color:#98c379;">&quot;Type employee&#39;s name, contact number, salary and department.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Please Enter after every input.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>);
+</span><span>			  </span><span style="color:#e5c07b;">String</span><span> empName </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">next</span><span>();
+</span><span>			  e.</span><span style="color:#e06c75;">setName</span><span>(empName);
+</span><span>			  </span><span style="color:#e5c07b;">String</span><span> empContactNumber </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">next</span><span>();
+</span><span>			  e.</span><span style="color:#e06c75;">setContactNum</span><span>(empContactNumber);
+</span><span>			  </span><span style="color:#c678dd;">double</span><span> empSalary </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">nextDouble</span><span>();
+</span><span>			  e.</span><span style="color:#e06c75;">setSalary</span><span>(empSalary);
+</span><span>			  </span><span style="color:#e5c07b;">String</span><span> empDept </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">next</span><span>();
+</span><span>			  e.</span><span style="color:#e06c75;">setDepartment</span><span>(empDept);
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;---------------------------------&quot;</span><span>);
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Name: &quot;</span><span style="color:#c678dd;">+</span><span> e.</span><span style="color:#e06c75;">getName</span><span>());
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Contact: &quot;</span><span style="color:#c678dd;">+</span><span> e.</span><span style="color:#e06c75;">getContactNum</span><span>());
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Salary: &quot;</span><span style="color:#c678dd;">+</span><span> e.</span><span style="color:#e06c75;">getSalary</span><span>());
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Department: &quot;</span><span style="color:#c678dd;">+</span><span> e.</span><span style="color:#e06c75;">getDepartment</span><span>());
+</span><span>		    </span><span style="color:#c678dd;">break</span><span>;
+</span><span>		  </span><span style="color:#c678dd;">case </span><span style="color:#98c379;">&#39;S&#39;</span><span style="color:#c678dd;">:
+</span><span>			  </span><span style="color:#e5c07b;">Student</span><span> s </span><span style="color:#c678dd;">= new </span><span style="color:#e5c07b;">Student</span><span>();
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">print</span><span>(</span><span style="color:#98c379;">&quot;Type student&#39;s name, contact number, enrolled program and year level	.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Please Enter after every input.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>);
+</span><span>			  </span><span style="color:#e5c07b;">String</span><span> studName </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">next</span><span>();
+</span><span>			  s.</span><span style="color:#e06c75;">setName</span><span>(studName);
+</span><span>			  </span><span style="color:#e5c07b;">String</span><span> studContactNumber </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">next</span><span>();
+</span><span>			  s.</span><span style="color:#e06c75;">setContactNum</span><span>(studContactNumber);
+</span><span>			  </span><span style="color:#e5c07b;">String</span><span> studProgram </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">next</span><span>();
+</span><span>			  s.</span><span style="color:#e06c75;">setProgram</span><span>(studProgram);
+</span><span>			  </span><span style="color:#c678dd;">int</span><span> studYearLevel </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">nextInt</span><span>();
+</span><span>			  s.</span><span style="color:#e06c75;">setYearLevel</span><span>(studYearLevel);
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;---------------------------------&quot;</span><span>);
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Name: &quot;</span><span style="color:#c678dd;">+</span><span> s.</span><span style="color:#e06c75;">getName</span><span>());
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Contact: &quot;</span><span style="color:#c678dd;">+</span><span> s.</span><span style="color:#e06c75;">getContactNum</span><span>());
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Enrolled Program: &quot;</span><span style="color:#c678dd;">+</span><span> s.</span><span style="color:#e06c75;">getProgram</span><span>());
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Year Level: &quot;</span><span style="color:#c678dd;">+</span><span> s.</span><span style="color:#e06c75;">getYearLevel</span><span>());
+</span><span>			  </span><span style="color:#c678dd;">break</span><span>;
+</span><span>		  </span><span style="color:#c678dd;">case </span><span style="color:#98c379;">&#39;F&#39;</span><span style="color:#c678dd;">:
+</span><span>			  </span><span style="color:#e5c07b;">Faculty</span><span> f </span><span style="color:#c678dd;">= new </span><span style="color:#e5c07b;">Faculty</span><span>();
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">print</span><span>(</span><span style="color:#98c379;">&quot;Type faculty&#39;s name, contact number, salary and department.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Please Enter after every input.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>);
+</span><span>			  </span><span style="color:#e5c07b;">String</span><span> facultyName </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">next</span><span>();
+</span><span>			  f.</span><span style="color:#e06c75;">setName</span><span>(facultyName);
+</span><span>			  </span><span style="color:#e5c07b;">String</span><span> facultyContactNumber </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">next</span><span>();
+</span><span>			  f.</span><span style="color:#e06c75;">setContactNum</span><span>(facultyContactNumber);
+</span><span>			  </span><span style="color:#c678dd;">double</span><span> facultySalary </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">nextDouble</span><span>();
+</span><span>			  f.</span><span style="color:#e06c75;">setSalary</span><span>(facultySalary);
+</span><span>			  </span><span style="color:#e5c07b;">String</span><span> facultyDept </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">next</span><span>();
+</span><span>			  f.</span><span style="color:#e06c75;">setDepartment</span><span>(facultyDept);
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">print</span><span>(</span><span style="color:#98c379;">&quot;Press Y if you are a regular member. N if not</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>);
+</span><span>			  </span><span style="color:#c678dd;">char</span><span> facultyStatus </span><span style="color:#c678dd;">=</span><span>  scan.</span><span style="color:#e06c75;">next</span><span>().</span><span style="color:#e06c75;">charAt</span><span>(</span><span style="color:#e5c07b;">0</span><span>);
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;---------------------------------&quot;</span><span>);
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Name: &quot;</span><span style="color:#c678dd;">+</span><span> f.</span><span style="color:#e06c75;">getName</span><span>());
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Contact: &quot;</span><span style="color:#c678dd;">+</span><span> f.</span><span style="color:#e06c75;">getContactNum</span><span>());
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Salary: &quot;</span><span style="color:#c678dd;">+</span><span> f.</span><span style="color:#e06c75;">getSalary</span><span>());
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Department: &quot;</span><span style="color:#c678dd;">+</span><span> f.</span><span style="color:#e06c75;">getDepartment</span><span>());
+</span><span>			  </span><span style="color:#c678dd;">if</span><span>(</span><span style="color:#e5c07b;">Character</span><span>.</span><span style="color:#e06c75;">toUpperCase</span><span>(facultyStatus) </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;Y&#39;</span><span>) {
+</span><span>				  f.</span><span style="color:#e06c75;">setStatus</span><span>(</span><span style="color:#e5c07b;">true</span><span>);
+</span><span>				  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Status: A regular member [&quot;</span><span style="color:#c678dd;">+</span><span>f.</span><span style="color:#e06c75;">isRegular</span><span>()</span><span style="color:#c678dd;">+</span><span style="color:#98c379;">&quot;]&quot;</span><span>);
+</span><span>			  } </span><span style="color:#c678dd;">else </span><span>{
+</span><span>				  f.</span><span style="color:#e06c75;">setStatus</span><span>(</span><span style="color:#e5c07b;">false</span><span>);
+</span><span>				  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Status: Not a regular member [&quot;</span><span style="color:#c678dd;">+</span><span>f.</span><span style="color:#e06c75;">isRegular</span><span>()</span><span style="color:#c678dd;">+</span><span style="color:#98c379;">&quot;]&quot;</span><span>);
+</span><span>			  }
+</span><span>			 </span><span style="color:#c678dd;">break</span><span>;
+</span><span>		  </span><span style="color:#c678dd;">default:  
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">print</span><span>(</span><span style="color:#98c379;">&quot;Invalid input, please restart the program.&quot;</span><span>);
+</span><span>		}
+</span><span>	}
+</span><span>}
+</span></code></pre>
+
+
+    </div>
+  </section>
+  <footer>
+    <hr class="hr-bot">
+      <a href="https://landchad.net" target="_blank"><img src="https://landchad.net/pix/landchad.gif" alt="landchad.net"></a>
+      <a href="https://www.gnu.org/" target="_blank"><img src="https://jemcv.github.io/web/images/gnu.png" alt="gnu.org"></a>
+      <a href="https://www.vim.org" target="_blank"><img src="https://jemcv.github.io/web/images/vim.gif"  alt="vim.org"></a>
+      <a href="https://archlinux.org/" target="_blank"><img src="https://jemcv.github.io/web/images/arch.png"  alt="archlinux.org"></a>
+      <a href="https://larbs.xyz/" target="_blank"><img src="https://larbs.xyz/pix/larbs.gif" alt="larbs.xyz"> </a>
+    <div class="copyright">
+      become someone <a href="https://github.com/jemcv" target="_blank">[  Jem ]</a> unlike everyone
+    </div>
+  <footer>
+</body>
+</html>

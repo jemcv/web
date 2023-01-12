@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jemcv</title>
+  <link rel="stylesheet" href="https://jemcv.github.io/web/style.css">
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://jemcv.github.io/web/rss.xml">
+  
+  
+  <link rel="icon" sizes="16x16" type="image/png" href="https://jemcv.github.io/web/images/favicon.png"/>
+  
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <nav>
+        <a href="https://jemcv.github.io/web/"><span class="bracket">[</span>  home <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/codes/"><span class="bracket">[</span>  code <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/about/"><span class="bracket">[</span>  about <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/posts/"><span class="bracket">[</span>  post <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/contact/"><span class="bracket">[</span>  contact <span class="bracket">]</span></a>
+      </nav>
+    <hr id="hr-top">
+      
+<h3 class="title">
+  overloading
+</h3>
+<p class="subtitle"><strong> 05-03-2022</strong></p>
+<p>sophomore year activities with java, constructor overloading and method overloading.</p>
+<h4 id="constructor-overloading">constructor overloading</h4>
+<pre data-lang="Java" style="background-color:#282c34;color:#dcdfe4;" class="language-Java "><code class="language-Java" data-lang="Java"><span style="color:#c678dd;">import </span><span>java.util.</span><span style="color:#e5c07b;">Scanner</span><span>;
+</span><span style="color:#c678dd;">class </span><span style="color:#e5c07b;">BloodData</span><span>{
+</span><span>	</span><span style="color:#c678dd;">static </span><span style="color:#e5c07b;">String </span><span>bloodType;
+</span><span>	</span><span style="color:#c678dd;">static </span><span style="color:#e5c07b;">String </span><span>rhFactor;
+</span><span>
+</span><span>	</span><span style="color:#61afef;">BloodData</span><span>(){
+</span><span>		bloodType </span><span style="color:#c678dd;">= </span><span style="color:#98c379;">&quot;O&quot;</span><span>;
+</span><span>		rhFactor </span><span style="color:#c678dd;">= </span><span style="color:#98c379;">&quot;+&quot;</span><span>;
+</span><span>	}
+</span><span>	</span><span style="color:#c678dd;">public </span><span style="color:#61afef;">BloodData</span><span>(</span><span style="color:#e5c07b;">String </span><span style="color:#e06c75;">bt</span><span>, </span><span style="color:#e5c07b;">String </span><span style="color:#e06c75;">rh</span><span>) {
+</span><span>		bloodType </span><span style="color:#c678dd;">=</span><span> bt;
+</span><span>		rhFactor </span><span style="color:#c678dd;">=</span><span> rh;		
+</span><span>	}
+</span><span>	</span><span style="color:#c678dd;">public void </span><span style="color:#61afef;">display</span><span>() {
+</span><span>		</span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(bloodType.</span><span style="color:#e06c75;">toUpperCase</span><span>() </span><span style="color:#c678dd;">+</span><span> rhFactor 
+</span><span>		</span><span style="color:#c678dd;">+ </span><span style="color:#98c379;">&quot; is added to the blood bank.&quot;</span><span>);
+</span><span>	}
+</span><span>}
+</span><span>
+</span><span style="color:#c678dd;">public class </span><span style="color:#e5c07b;">RunBloodData </span><span>{
+</span><span>	</span><span style="color:#c678dd;">public static void </span><span style="color:#61afef;">main</span><span>(</span><span style="color:#e5c07b;">String</span><span style="color:#c678dd;">[] </span><span style="color:#e06c75;">args</span><span>) {
+</span><span>	</span><span style="color:#e5c07b;">Scanner</span><span> scan </span><span style="color:#c678dd;">= new </span><span style="color:#e5c07b;">Scanner</span><span>(</span><span style="color:#e5c07b;">System</span><span>.in);
+</span><span>	
+</span><span>	</span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">print</span><span>(</span><span style="color:#98c379;">&quot;Enter the blood type of patient: &quot;</span><span>);
+</span><span>	</span><span style="color:#e5c07b;">String</span><span> btype </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">nextLine</span><span>();
+</span><span>	</span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">print</span><span>(</span><span style="color:#98c379;">&quot;Enter the Rhesus factor (+ or -) &quot;</span><span>);
+</span><span>	</span><span style="color:#e5c07b;">String</span><span> rh </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">nextLine</span><span>();
+</span><span>	
+</span><span>	</span><span style="color:#5c6370;">// An if else statement to display a blank input
+</span><span>	</span><span style="color:#c678dd;">if </span><span>(btype </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&quot;&quot; </span><span style="color:#c678dd;">&amp;&amp;</span><span> rh </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&quot;&quot;</span><span>) {
+</span><span>		</span><span style="color:#e5c07b;">BloodData</span><span> bd </span><span style="color:#c678dd;">= new </span><span style="color:#e5c07b;">BloodData</span><span>();
+</span><span>		bd.</span><span style="color:#e06c75;">display</span><span>();
+</span><span>	} </span><span style="color:#c678dd;">else </span><span>{
+</span><span>		</span><span style="color:#e5c07b;">BloodData</span><span> bd </span><span style="color:#c678dd;">= new </span><span style="color:#e5c07b;">BloodData</span><span>(btype, rh);
+</span><span>		bd.</span><span style="color:#e06c75;">display</span><span>();
+</span><span>	}
+</span><span>	
+</span><span>	}
+</span><span>}
+</span></code></pre>
+<h4 id="method-overloading">method overloading</h4>
+<pre data-lang="Java" style="background-color:#282c34;color:#dcdfe4;" class="language-Java "><code class="language-Java" data-lang="Java"><span style="color:#c678dd;">import </span><span>java.util.</span><span style="color:#e5c07b;">Scanner</span><span>;
+</span><span style="color:#c678dd;">class </span><span style="color:#e5c07b;">AmountDue</span><span>{
+</span><span>	</span><span style="color:#c678dd;">double </span><span style="color:#61afef;">computeAmountDue</span><span>(</span><span style="color:#c678dd;">double </span><span style="color:#e06c75;">item_ordered</span><span>) {
+</span><span>		</span><span style="color:#c678dd;">double</span><span> total </span><span style="color:#c678dd;">=</span><span> item_ordered </span><span style="color:#c678dd;">+ </span><span>(item_ordered </span><span style="color:#c678dd;">* </span><span style="color:#e5c07b;">.12</span><span>);
+</span><span>		</span><span style="color:#c678dd;">return</span><span> total; 
+</span><span>	}
+</span><span>	</span><span style="color:#c678dd;">double </span><span style="color:#61afef;">computeAmountDue</span><span>(</span><span style="color:#c678dd;">double </span><span style="color:#e06c75;">item_ordered</span><span>, </span><span style="color:#c678dd;">double </span><span style="color:#e06c75;">quantity_ordered</span><span>) {
+</span><span>		</span><span style="color:#c678dd;">double</span><span> total </span><span style="color:#c678dd;">= </span><span>(item_ordered </span><span style="color:#c678dd;">*</span><span> quantity_ordered) </span><span style="color:#c678dd;">+ </span><span>(item_ordered </span><span style="color:#c678dd;">* </span><span style="color:#e5c07b;">.12</span><span>);
+</span><span>		</span><span style="color:#c678dd;">return</span><span> total;
+</span><span>	}
+</span><span>	</span><span style="color:#c678dd;">double </span><span style="color:#61afef;">computeAmountDue</span><span>(</span><span style="color:#c678dd;">double </span><span style="color:#e06c75;">item_ordered</span><span>, </span><span style="color:#c678dd;">double </span><span style="color:#e06c75;">quantity_ordered</span><span>, </span><span style="color:#c678dd;">double </span><span style="color:#e06c75;">discount_amount</span><span>) {
+</span><span>		</span><span style="color:#c678dd;">double</span><span> total </span><span style="color:#c678dd;">= </span><span>((item_ordered </span><span style="color:#c678dd;">*</span><span> quantity_ordered)  </span><span style="color:#c678dd;">-</span><span> discount_amount) </span><span style="color:#c678dd;">+ </span><span>(item_ordered </span><span style="color:#c678dd;">* </span><span style="color:#e5c07b;">.12</span><span>);
+</span><span>		</span><span style="color:#c678dd;">return</span><span> total;
+</span><span>	}
+</span><span>} 
+</span><span style="color:#c678dd;">public class </span><span style="color:#e5c07b;">RunAmountDue </span><span>{
+</span><span>	</span><span style="color:#c678dd;">public static void </span><span style="color:#61afef;">main</span><span>(</span><span style="color:#e5c07b;">String</span><span style="color:#c678dd;">[] </span><span style="color:#e06c75;">args</span><span>) {
+</span><span>		</span><span style="color:#e5c07b;">Scanner</span><span> scan </span><span style="color:#c678dd;">= new </span><span style="color:#e5c07b;">Scanner</span><span>(</span><span style="color:#e5c07b;">System</span><span>.in);
+</span><span>		</span><span style="color:#e5c07b;">AmountDue</span><span> obj </span><span style="color:#c678dd;">= new </span><span style="color:#e5c07b;">AmountDue</span><span>();
+</span><span>		</span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Press any of the following then enter values separated by spaces: &quot;</span><span>);
+</span><span>		</span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot; 1 - Price only </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;"> 2 - Price and quantity </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;"> 3 - Price, quantity and discount amount &quot;</span><span>);
+</span><span>		</span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">print</span><span>(</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Enter your choice: &quot;</span><span>);
+</span><span>		</span><span style="color:#c678dd;">int</span><span> choice </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">nextInt</span><span>();
+</span><span>		
+</span><span>		</span><span style="color:#5c6370;">//A switch for our user to input multiple values
+</span><span>		</span><span style="color:#c678dd;">switch</span><span>(choice) {
+</span><span>		  </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">1</span><span style="color:#c678dd;">:
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">print</span><span>(</span><span style="color:#98c379;">&quot;Enter your value : &quot;</span><span>);
+</span><span>			  </span><span style="color:#c678dd;">double</span><span> item_1 </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">nextDouble</span><span>();
+</span><span>			  </span><span style="color:#c678dd;">double</span><span> total_1 </span><span style="color:#c678dd;">=</span><span> obj.</span><span style="color:#e06c75;">computeAmountDue</span><span>(item_1);
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Amount due is    : &quot; </span><span style="color:#c678dd;">+</span><span> total_1);
+</span><span>		    </span><span style="color:#c678dd;">break</span><span>;
+</span><span>		  </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">2</span><span style="color:#c678dd;">:
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">print</span><span>(</span><span style="color:#98c379;">&quot;Enter your values: &quot;</span><span>);
+</span><span>			  </span><span style="color:#c678dd;">double</span><span> item_2 </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">nextDouble</span><span>();
+</span><span>			  </span><span style="color:#c678dd;">double</span><span> quan_2 </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">nextDouble</span><span>();
+</span><span>			  </span><span style="color:#c678dd;">double</span><span> total_2 </span><span style="color:#c678dd;">=</span><span> obj.</span><span style="color:#e06c75;">computeAmountDue</span><span>(item_2, quan_2);
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Amount due is    : &quot; </span><span style="color:#c678dd;">+</span><span> total_2);
+</span><span>		    </span><span style="color:#c678dd;">break</span><span>;
+</span><span>		  </span><span style="color:#c678dd;">case </span><span style="color:#e5c07b;">3</span><span style="color:#c678dd;">:
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">print</span><span>(</span><span style="color:#98c379;">&quot;Enter your values: &quot;</span><span>);
+</span><span>			  </span><span style="color:#c678dd;">double</span><span> item_3 </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">nextDouble</span><span>();
+</span><span>			  </span><span style="color:#c678dd;">double</span><span> quan_3 </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">nextDouble</span><span>();
+</span><span>			  </span><span style="color:#c678dd;">double</span><span> disc_3 </span><span style="color:#c678dd;">=</span><span> scan.</span><span style="color:#e06c75;">nextDouble</span><span>();
+</span><span>			  </span><span style="color:#c678dd;">double</span><span> total_3 </span><span style="color:#c678dd;">=</span><span> obj.</span><span style="color:#e06c75;">computeAmountDue</span><span>(item_3, quan_3, disc_3);
+</span><span>			  </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">println</span><span>(</span><span style="color:#98c379;">&quot;Amount due is    : &quot; </span><span style="color:#c678dd;">+</span><span> total_3);
+</span><span>			</span><span style="color:#c678dd;">break</span><span>;
+</span><span>		  </span><span style="color:#c678dd;">default:
+</span><span>		      </span><span style="color:#e5c07b;">System</span><span>.out.</span><span style="color:#e06c75;">print</span><span>(</span><span style="color:#98c379;">&quot;Invalid input, please restart the program.&quot;</span><span>);
+</span><span>		}
+</span><span>	}
+</span><span>}
+</span></code></pre>
+
+
+    </div>
+  </section>
+  <footer>
+    <hr class="hr-bot">
+      <a href="https://landchad.net" target="_blank"><img src="https://landchad.net/pix/landchad.gif" alt="landchad.net"></a>
+      <a href="https://www.gnu.org/" target="_blank"><img src="https://jemcv.github.io/web/images/gnu.png" alt="gnu.org"></a>
+      <a href="https://www.vim.org" target="_blank"><img src="https://jemcv.github.io/web/images/vim.gif"  alt="vim.org"></a>
+      <a href="https://archlinux.org/" target="_blank"><img src="https://jemcv.github.io/web/images/arch.png"  alt="archlinux.org"></a>
+      <a href="https://larbs.xyz/" target="_blank"><img src="https://larbs.xyz/pix/larbs.gif" alt="larbs.xyz"> </a>
+    <div class="copyright">
+      become someone <a href="https://github.com/jemcv" target="_blank">[  Jem ]</a> unlike everyone
+    </div>
+  <footer>
+</body>
+</html>
