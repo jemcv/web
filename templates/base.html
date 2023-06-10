@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jemcv</title>
+  <link rel="stylesheet" href="{{ get_url(path="style.css") | safe }}">
+  {% block rss %}
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
+  {% endblock %}
+  {% if config.extra.favicon %}
+  <link rel="icon" sizes="16x16" type="image/png" href="{{ get_url(path="/images/favicon.png") }}"/>
+  {% endif %}
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <nav>
+        <a href="{{ get_url(path="@/_index.md") }}"><span class="bracket">[</span>  home <span class="bracket">]</span></a>
+        <a href="{{ get_url(path="@/codes/_index.md") }}"><span class="bracket">[</span>  code <span class="bracket">]</span></a>
+        <a href="{{ get_url(path="@/about.md") }}"><span class="bracket">[</span>  about <span class="bracket">]</span></a>
+        <a href="{{ get_url(path="@/posts/_index.md") }}"><span class="bracket">[</span>  post <span class="bracket">]</span></a>
+        <a href="{{ get_url(path="@/contact.md") }}"><span class="bracket">[</span>  contact <span class="bracket">]</span></a>
+      </nav>
+    <hr id="hr-top">
+      {% block content %} {% endblock %}
+    </div>
+  </section>
+  <footer>
+    <hr class="hr-bot">
+      <a href="https://landchad.net" target="_blank"><img src="https://landchad.net/pix/landchad.gif" alt="landchad.net"></a>
+      <a href="https://www.gnu.org/" target="_blank"><img src="{{ get_url(path="/images/gnu.png") }}" alt="gnu.org"></a>
+      <a href="https://www.vim.org" target="_blank"><img src="{{ get_url(path="/images/vim.gif") }}"  alt="vim.org"></a>
+      <a href="https://archlinux.org/" target="_blank"><img src="{{ get_url(path="/images/arch.png") }}"  alt="archlinux.org"></a>
+      <a href="https://larbs.xyz/" target="_blank"><img src="https://larbs.xyz/pix/larbs.gif" alt="larbs.xyz"> </a>
+    <div class="copyright">
+      become someone <a href="https://github.com/jemcv" target="_blank">[  Jem ]</a> unlike everyone
+    </div>
+  <footer>
+</body>
+</html>

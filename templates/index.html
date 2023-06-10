@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <main>
+    <div class="info">
+      <div class="ascii">
+        
+     _  
+    | | ___ _ __ ___
+ _  | |/ _ \ '_ ` _ \   
+| |_| |  __/ | | | | |
+ \___/ \___|_| |_| |_|
+      </div>
+      <div class="joker">
+        <img src="{{ get_url(path="/images/gifs/mikasa.gif") }}">
+        <!--
+        <img src="{{ config.extra.joker }}">
+        -->
+      </div>
+    </div>
+    <section>
+        <p>Hey! I'm <a href="https://www.github.com/jemcv" target="_blank">Jem</a>, Welcome to my personal website. This is where I put my <a href="{{ get_url(path="@/codes/_index.md") }}">codes</a> and my <a href="{{ get_url(path="@/posts/_index.md") }}">posts</a>. My plan is to write some things here.</p>
+        <p>
+          I use <a href="https://archlinux.org/" target="_blank">arch</a> btw, from what I've experienced setting it up, Arch Linux  is an operating system which you need to configure it from scratch to have a working desktop.
+          I decided to use a window manager. The window manager I use is <a href="https://dwm.suckless.org/" target="_blank">dwm</a>. "dwm is a dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed" copied from the suckless website. >_<
+        </p>
+        <p>
+		      The other tools I use is a menu, also from the suckless.org called <a ref="https://tools.suckless.org/dmenu/" target="_blank">dmenu</a>,  I use it for launching applications, haven't patched it yet but I added pywal to it.<a href="https://github.com/dylanaraps/pywal" target="_blank"> Pywal</a> is used for generating colors from an image/background. For the status bar, I'm using <a href="https://github.com/torrinfail/dwmblocks" target="_blank">dwmblocks</a> where you can use shell scripts to retrieve information from your os then the bar will display it.
+        </p>
+        <p>
+          Why do I have this website? I want to have a <a href=http://motherfuckingwebsite.com target="_blank">minimal website</a> and leave my old <a href="https://jekyllrb.com/">jekkyl</a> site where I depended on a library just to have a cool window opening when you click a link, btw this is the website that I am talking to, <a href="https://jemcv.github.io/el-terminal/" target="_blank">el-terminal</a>. Now my website is built with <a href="https://www.getzola.org/" target="_blank">zola</a>, a static site generator written in rust .
+        </p>
+        <p>
+          If you want to look for my build, these are the links below.
+        </p>
+    </section>
+    <section>
+    <p><a href="https://github.com/jemcv/dwm" target="_blank">dwm</a>&nbsp<a href="https://github.com/jemcv/dmenu" target="_blank">dmenu</a>&nbsp<a href="https://github.com/jemcv/dwmblocks" target="_blank">dwmblocks</a></p>
+    </section>
+    <section>
+      <video controls> 
+        <source src="{{ get_url(path="/videos/dwm.mp4") }}" type="video/mp4">
+      </video>
+    </section>
+  </main>
+{% endblock content %}
