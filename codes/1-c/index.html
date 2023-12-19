@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jemcv</title>
+  <link rel="stylesheet" href="https://jemcv.github.io/web/style.css">
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://jemcv.github.io/web/rss.xml">
+  
+  
+  <link rel="icon" sizes="16x16" type="image/png" href="https://jemcv.github.io/web/images/favicon.png"/>
+  
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <nav>
+        <a href="https://jemcv.github.io/web/"><span class="bracket">[</span>  home <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/codes/"><span class="bracket">[</span>  code <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/about/"><span class="bracket">[</span>  about <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/posts/"><span class="bracket">[</span>  post <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/contact/"><span class="bracket">[</span>  contact <span class="bracket">]</span></a>
+      </nav>
+    <hr id="hr-top">
+      
+<h3 class="title">
+  jankenpon
+</h3>
+<p class="subtitle"><strong> 02-28-2021</strong></p>
+<p>this is my freshmen year (first-sem) project game written in C++.</p>
+<pre data-lang="C++" style="background-color:#282c34;color:#dcdfe4;" class="language-C++ "><code class="language-C++" data-lang="C++"><span style="color:#c678dd;">int </span><span style="color:#61afef;">main</span><span>(){
+</span><span>
+</span><span>    </span><span style="color:#5c6370;">//Player vs Computer
+</span><span>    </span><span style="color:#c678dd;">char</span><span> playerPick;
+</span><span>    </span><span style="color:#c678dd;">int</span><span> computerPick </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">3</span><span>;
+</span><span>    </span><span style="color:#61afef;">srand</span><span>(</span><span style="color:#61afef;">time</span><span>(</span><span style="color:#e5c07b;">0</span><span>));
+</span><span>    </span><span style="color:#c678dd;">char</span><span> computerBrain[computerPick] </span><span style="color:#c678dd;">= </span><span>{</span><span style="color:#98c379;">&#39;R&#39;</span><span>, </span><span style="color:#98c379;">&#39;P&#39;</span><span>, </span><span style="color:#98c379;">&#39;S&#39;</span><span>};
+</span><span>    </span><span style="color:#c678dd;">bool</span><span> complayWin </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">false</span><span>;
+</span><span> 
+</span><span>    </span><span style="color:#5c6370;">//Player vs Player
+</span><span>    string playerOneName, playerTwoName;
+</span><span>    </span><span style="color:#c678dd;">char</span><span> playerOnePick, playerTwoPick;
+</span><span>    </span><span style="color:#c678dd;">char</span><span> playGame </span><span style="color:#c678dd;">= </span><span style="color:#98c379;">&#39;Y&#39;</span><span>;
+</span><span>    </span><span style="color:#c678dd;">bool</span><span> playerWin </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">false</span><span>;
+</span><span> 
+</span><span>    </span><span style="color:#5c6370;">//Game Options
+</span><span>    </span><span style="color:#c678dd;">int</span><span> playerOption;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Welcome to Console Type Rock Paper Scissors, Good Luck and Have Fun! :D </span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Main menu</span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[1] Player vs Computer </span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">[2] Player vs Player</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">[3] Exit </span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">To play choose between [1] and [2]: &quot;</span><span>;
+</span><span>    cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>playerOption;
+</span><span>    </span><span style="color:#61afef;">system</span><span>(</span><span style="color:#98c379;">&quot;CLS&quot;</span><span>);
+</span><span> 
+</span><span>    </span><span style="color:#5c6370;">//Single Player
+</span><span>    </span><span style="color:#c678dd;">if</span><span>(playerOption </span><span style="color:#c678dd;">== </span><span style="color:#e5c07b;">1</span><span>){
+</span><span>        </span><span style="color:#c678dd;">while </span><span>(playGame </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;Y&#39;</span><span style="color:#c678dd;">||</span><span> playGame </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;y&#39;</span><span>){
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Welcome to the Player vs Computer Rock Paper Scissors.</span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Instructions:</span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">To defeat the computer, pick Rock Paper Scissors.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[R] for Rock, [P] for Paper, [S] for Scissors.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;The computer will pick after you pick.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Rock beats Scissors, Paper beats Rock, Scissors beats Paper.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Enjoy and Have Fun!</span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span> 
+</span><span>            </span><span style="color:#c678dd;">do </span><span>{
+</span><span>                cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Player: [R]ock [P]aper [S]cissors: &quot;</span><span>;
+</span><span>                cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>playerPick;
+</span><span>                cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Player picks: &quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>playerPick</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span> 
+</span><span>                </span><span style="color:#c678dd;">for </span><span>(</span><span style="color:#c678dd;">int</span><span> i </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">0</span><span>; i </span><span style="color:#c678dd;">&lt; </span><span style="color:#e5c07b;">1</span><span>; i</span><span style="color:#c678dd;">++</span><span>){
+</span><span>                    </span><span style="color:#c678dd;">int</span><span> computerResult </span><span style="color:#c678dd;">= </span><span style="color:#61afef;">rand</span><span>() </span><span style="color:#c678dd;">%</span><span> computerPick;
+</span><span>                    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Computer picks: &quot;</span><span>;
+</span><span>                    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span>computerBrain[computerResult];
+</span><span>                    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span> 
+</span><span>                    </span><span style="color:#c678dd;">if</span><span>(playerPick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;P&#39; </span><span style="color:#c678dd;">&amp;&amp;</span><span> computerBrain[computerResult] </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;R&#39;</span><span>){
+</span><span>                        complayWin </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">true</span><span>;
+</span><span>                        cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Player Wins!&quot;</span><span>;
+</span><span>                    }
+</span><span> 
+</span><span>                    </span><span style="color:#c678dd;">if</span><span>(computerBrain[computerResult] </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;P&#39; </span><span style="color:#c678dd;">&amp;&amp;</span><span> playerPick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;R&#39;</span><span>){
+</span><span>                        complayWin </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">true</span><span>;
+</span><span>                        cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Computer Wins!</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>                    }
+</span><span> 
+</span><span>                    </span><span style="color:#c678dd;">if</span><span>(playerPick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;R&#39; </span><span style="color:#c678dd;">&amp;&amp;</span><span> computerBrain[computerResult] </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;S&#39;</span><span>){
+</span><span>                        complayWin </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">true</span><span>;
+</span><span>                        cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Player Wins!</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>                    }
+</span><span> 
+</span><span>                    </span><span style="color:#c678dd;">if</span><span>(computerBrain[computerResult] </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;R&#39; </span><span style="color:#c678dd;">&amp;&amp;</span><span> playerPick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;S&#39;</span><span>){
+</span><span>                        complayWin </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">true</span><span>;
+</span><span>                        cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Computer Wins!</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>                    }
+</span><span> 
+</span><span>                    </span><span style="color:#c678dd;">if</span><span>(playerPick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;S&#39; </span><span style="color:#c678dd;">&amp;&amp;</span><span> computerBrain[computerResult] </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;P&#39;</span><span>){
+</span><span>                        complayWin </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">true</span><span>;
+</span><span>                        cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Player Wins!</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>                    }
+</span><span> 
+</span><span>                    </span><span style="color:#c678dd;">if</span><span>(computerBrain[computerResult] </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;S&#39; </span><span style="color:#c678dd;">&amp;&amp;</span><span> playerPick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;P&#39;</span><span>){
+</span><span>                        complayWin </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">true</span><span>;
+</span><span>                        cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Computer Wins!</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>                    }
+</span><span> 
+</span><span>                    </span><span style="color:#c678dd;">if</span><span>(playerPick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;R&#39; </span><span style="color:#c678dd;">&amp;&amp;</span><span> computerBrain[computerResult] </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;R&#39;</span><span>){
+</span><span>                        complayWin </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">false</span><span>;
+</span><span>                        cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;No one wins, Please Repick!</span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>                    }
+</span><span> 
+</span><span>                    </span><span style="color:#c678dd;">if</span><span>(playerPick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;P&#39; </span><span style="color:#c678dd;">&amp;&amp;</span><span> computerBrain[computerResult] </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;P&#39;</span><span>){
+</span><span>                        complayWin </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">false</span><span>;
+</span><span>                        cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;No one wins, Please Repick!</span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>                    }
+</span><span> 
+</span><span>                    </span><span style="color:#c678dd;">if</span><span>(playerPick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;S&#39; </span><span style="color:#c678dd;">&amp;&amp;</span><span> computerBrain[computerResult] </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;S&#39;</span><span>){
+</span><span>                        complayWin </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">false</span><span>;
+</span><span>                        cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;No one wins, Please Repick!</span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>                    }
+</span><span>                    
+</span><span>                }
+</span><span> 
+</span><span>            } </span><span style="color:#c678dd;">while</span><span>(complayWin </span><span style="color:#c678dd;">== </span><span style="color:#e5c07b;">false</span><span>);
+</span><span> 
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Do you want to play again?[Y]/[N]: &quot;</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>playGame;
+</span><span>            </span><span style="color:#61afef;">system</span><span>(</span><span style="color:#98c379;">&quot;CLS&quot;</span><span>);
+</span><span>        }
+</span><span>    }
+</span><span> 
+</span><span>    </span><span style="color:#5c6370;">//Two Players
+</span><span>    </span><span style="color:#c678dd;">if</span><span>(playerOption </span><span style="color:#c678dd;">== </span><span style="color:#e5c07b;">2</span><span>){
+</span><span>        </span><span style="color:#c678dd;">while </span><span>(playGame </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;Y&#39;</span><span style="color:#c678dd;">||</span><span> playGame </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;y&#39;</span><span>){
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Welcome to the Two Player of Rock Paper Scissors.
+</span><span style="color:#98c379;">            </span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Instructions:</span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;[R] for Rock, [P] for Paper, [S] for Scissors.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Rock beats Scissors, Paper beats Rock, 
+</span><span style="color:#98c379;">            Scissors beats Paper.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Console will clear the screen after a player 
+</span><span style="color:#98c379;">            picks to hide it.</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Enjoy and Have Fun!</span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Write your name first player: &quot;</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>playerOneName;
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;Write your name second player: &quot;</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>playerTwoName;
+</span><span> 
+</span><span>            </span><span style="color:#c678dd;">do </span><span>{
+</span><span>                cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">1st Player:&quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>playerOneName</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot; 
+</span><span style="color:#98c379;">                [R]ock [P]aper [S]cissors: &quot;</span><span>;
+</span><span>                cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>playerOnePick;
+</span><span>                </span><span style="color:#61afef;">system</span><span>(</span><span style="color:#98c379;">&quot;CLS&quot;</span><span>); </span><span style="color:#5c6370;">// Hiding player one input
+</span><span>                cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">2nd Player:&quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>playerTwoName</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot; 
+</span><span style="color:#98c379;">                [R]ock [P]aper [S]cissors: &quot;</span><span>;
+</span><span>                cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>playerTwoPick;
+</span><span>                </span><span style="color:#61afef;">system</span><span>(</span><span style="color:#98c379;">&quot;CLS&quot;</span><span>); </span><span style="color:#5c6370;">// Hiding player two input
+</span><span> 
+</span><span>                cout</span><span style="color:#c678dd;">&lt;&lt;</span><span>playerOneName</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot; picks: &quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>playerOnePick</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>                cout</span><span style="color:#c678dd;">&lt;&lt;</span><span>playerTwoName</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot; picks: &quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>playerTwoPick</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span> 
+</span><span>                </span><span style="color:#c678dd;">if</span><span>(playerOnePick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;P&#39; </span><span style="color:#c678dd;">&amp;&amp;</span><span> playerTwoPick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;R&#39; </span><span>){
+</span><span>                    playerWin </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">true</span><span>;
+</span><span>                    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>playerOneName</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot; Wins!&quot;</span><span>;
+</span><span>                }
+</span><span>                </span><span style="color:#c678dd;">if</span><span>(playerTwoPick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;P&#39; </span><span style="color:#c678dd;">&amp;&amp;</span><span> playerOnePick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;R&#39;</span><span>){
+</span><span>                    playerWin </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">true</span><span>;
+</span><span>                    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>playerTwoName</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot; Wins!&quot;</span><span>;
+</span><span>                }
+</span><span> 
+</span><span>                </span><span style="color:#c678dd;">if</span><span>(playerOnePick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;R&#39;  </span><span style="color:#c678dd;">&amp;&amp;</span><span> playerTwoPick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;S&#39;</span><span>){
+</span><span>                    playerWin </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">true</span><span>;
+</span><span>                    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>playerOneName</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot; Wins!&quot;</span><span>;
+</span><span>                }
+</span><span>                </span><span style="color:#c678dd;">if</span><span>(playerTwoPick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;R&#39; </span><span style="color:#c678dd;">&amp;&amp;</span><span> playerOnePick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;S&#39;</span><span>){
+</span><span>                    playerWin </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">true</span><span>;
+</span><span>                    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>playerTwoName</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot; Wins!&quot;</span><span>;
+</span><span>                }
+</span><span> 
+</span><span>                </span><span style="color:#c678dd;">if</span><span>(playerOnePick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;S&#39; </span><span style="color:#c678dd;">&amp;&amp;</span><span> playerTwoPick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;P&#39;</span><span>){
+</span><span>                    playerWin </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">true</span><span>;
+</span><span>                    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>playerOneName</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot; Wins!&quot;</span><span>;
+</span><span>                }
+</span><span>                </span><span style="color:#c678dd;">if</span><span>(playerTwoPick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;S&#39; </span><span style="color:#c678dd;">&amp;&amp;</span><span> playerOnePick </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&#39;P&#39;</span><span>){
+</span><span>                    playerWin </span><span style="color:#c678dd;">= </span><span style="color:#e5c07b;">true</span><span>;
+</span><span>                    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span style="color:#c678dd;">&lt;&lt;</span><span>playerTwoName</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot; Wins!&quot;</span><span>;
+</span><span>                }
+</span><span> 
+</span><span>                </span><span style="color:#c678dd;">if</span><span>(playerWin </span><span style="color:#c678dd;">== </span><span style="color:#e5c07b;">false</span><span>){
+</span><span>                    cout </span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">No One Wins, Please Repick!</span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>                }
+</span><span> 
+</span><span>            } </span><span style="color:#c678dd;">while</span><span>(playerWin </span><span style="color:#c678dd;">== </span><span style="color:#e5c07b;">false</span><span>);
+</span><span> 
+</span><span>            cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n\n</span><span style="color:#98c379;">Do you want to play again?[Y]/[N]: &quot;</span><span>;
+</span><span>            cin</span><span style="color:#c678dd;">&gt;&gt;</span><span>playGame;
+</span><span>            </span><span style="color:#61afef;">system</span><span>(</span><span style="color:#98c379;">&quot;CLS&quot;</span><span>);
+</span><span>        }
+</span><span>    }
+</span><span>    cout</span><span style="color:#c678dd;">&lt;&lt;</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Thanks for Playing!</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">&quot;</span><span>;
+</span><span>}
+</span></code></pre>
+
+
+    </div>
+  </section>
+  <footer>
+    <hr class="hr-bot">
+      <a href="https://landchad.net" target="_blank"><img src="https://landchad.net/pix/landchad.gif" alt="landchad.net"></a>
+      <a href="https://www.gnu.org/" target="_blank"><img src="https://jemcv.github.io/web/images/gnu.png" alt="gnu.org"></a>
+      <a href="https://www.vim.org" target="_blank"><img src="https://jemcv.github.io/web/images/vim.gif"  alt="vim.org"></a>
+      <a href="https://archlinux.org/" target="_blank"><img src="https://jemcv.github.io/web/images/arch.png"  alt="archlinux.org"></a>
+      <a href="https://larbs.xyz/" target="_blank"><img src="https://larbs.xyz/pix/larbs.gif" alt="larbs.xyz"> </a>
+    <div class="copyright">
+      become someone <a href="https://github.com/jemcv" target="_blank">[  Jem ]</a> unlike everyone
+    </div>
+  <footer>
+</body>
+</html>

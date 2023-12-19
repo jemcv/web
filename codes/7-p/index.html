@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jemcv</title>
+  <link rel="stylesheet" href="https://jemcv.github.io/web/style.css">
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://jemcv.github.io/web/rss.xml">
+  
+  
+  <link rel="icon" sizes="16x16" type="image/png" href="https://jemcv.github.io/web/images/favicon.png"/>
+  
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <nav>
+        <a href="https://jemcv.github.io/web/"><span class="bracket">[</span>  home <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/codes/"><span class="bracket">[</span>  code <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/about/"><span class="bracket">[</span>  about <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/posts/"><span class="bracket">[</span>  post <span class="bracket">]</span></a>
+        <a href="https://jemcv.github.io/web/contact/"><span class="bracket">[</span>  contact <span class="bracket">]</span></a>
+      </nav>
+    <hr id="hr-top">
+      
+<h3 class="title">
+  sql formatter
+</h3>
+<p class="subtitle"><strong> 05-01-2022</strong></p>
+<h4 id="sql-code-insert-formatter">SQL CODE INSERT FORMATTER</h4>
+<p>This script is written to format attributes from a table.</p>
+<h4 id="example-usage">Example usage</h4>
+<pre style="background-color:#282c34;color:#dcdfe4;"><code><span>Table only        [1]
+</span><span>Table with column [2]
+</span><span>
+</span><span>Enter table type : 1
+</span><span>Name of the table: Baz
+</span><span>How many columns : 2
+</span><span>Enter attribute 1: Foobar
+</span><span>Enter datatype  1: str
+</span><span>Enter attribute 2: 100
+</span><span>Enter datatype  2: int
+</span></code></pre>
+<h4 id="output">Output</h4>
+<pre data-lang="sql" style="background-color:#282c34;color:#dcdfe4;" class="language-sql "><code class="language-sql" data-lang="sql"><span style="color:#c678dd;">INSERT INTO</span><span> BAZ
+</span><span style="color:#c678dd;">VALUES</span><span> (</span><span style="color:#98c379;">&#39;Foobar&#39;</span><span>, </span><span style="color:#e5c07b;">100</span><span>)
+</span></code></pre>
+<h4 id="code">Code</h4>
+<pre data-lang="python" style="background-color:#282c34;color:#dcdfe4;" class="language-python "><code class="language-python" data-lang="python"><span>intro </span><span style="color:#c678dd;">= </span><span style="color:#98c379;">&quot;&quot;&quot;
+</span><span style="color:#98c379;">           _   _                     _
+</span><span style="color:#98c379;"> ___  __ _| | (_)_ __  ___  ___ _ __| |_
+</span><span style="color:#98c379;">/ __|/ _` | | | | &#39;_ </span><span style="background-color:#e5c07b;color:#dcdfe4;">\/</span><span style="color:#98c379;"> __|/ _ </span><span style="background-color:#e5c07b;color:#dcdfe4;">\ </span><span style="color:#98c379;">&#39;__| __|
+</span><span style="background-color:#e5c07b;color:#dcdfe4;">\_</span><span style="color:#98c379;">_ </span><span style="background-color:#e5c07b;color:#dcdfe4;">\ </span><span style="color:#98c379;">(_| | | | | | | </span><span style="background-color:#e5c07b;color:#dcdfe4;">\_</span><span style="color:#98c379;">_ </span><span style="background-color:#e5c07b;color:#dcdfe4;">\ </span><span style="color:#98c379;"> __/ |  | |_
+</span><span style="color:#98c379;">|___/</span><span style="background-color:#e5c07b;color:#dcdfe4;">\_</span><span style="color:#98c379;">_, |_| |_|_| |_|___/</span><span style="background-color:#e5c07b;color:#dcdfe4;">\_</span><span style="color:#98c379;">__|_|   </span><span style="background-color:#e5c07b;color:#dcdfe4;">\_</span><span style="color:#98c379;">_|
+</span><span style="color:#98c379;">        |_|
+</span><span style="color:#98c379;">  __                            _   _
+</span><span style="color:#98c379;"> / _| ___  _ __ _ __ ___   __ _| |_| |_ ___ _ __
+</span><span style="color:#98c379;">| |_ / _ </span><span style="background-color:#e5c07b;color:#dcdfe4;">\|</span><span style="color:#98c379;"> &#39;__| &#39;_ ` _ </span><span style="background-color:#e5c07b;color:#dcdfe4;">\ </span><span style="color:#98c379;">/ _` | __| __/ _ </span><span style="background-color:#e5c07b;color:#dcdfe4;">\ </span><span style="color:#98c379;">&#39;__|
+</span><span style="color:#98c379;">|  _| (_) | |  | | | | | | (_| | |_| ||  __/ |
+</span><span style="color:#98c379;">|_|  </span><span style="background-color:#e5c07b;color:#dcdfe4;">\_</span><span style="color:#98c379;">__/|_|  |_| |_| |_|</span><span style="background-color:#e5c07b;color:#dcdfe4;">\_</span><span style="color:#98c379;">_,_|</span><span style="background-color:#e5c07b;color:#dcdfe4;">\_</span><span style="color:#98c379;">_|</span><span style="background-color:#e5c07b;color:#dcdfe4;">\_</span><span style="color:#98c379;">_</span><span style="background-color:#e5c07b;color:#dcdfe4;">\_</span><span style="color:#98c379;">__|_|
+</span><span style="color:#98c379;">
+</span><span style="color:#98c379;">A cli app for formatting attributes to sql insert code.
+</span><span style="color:#98c379;">
+</span><span style="color:#98c379;">&quot;&quot;&quot;
+</span><span style="color:#61afef;">print</span><span>(intro)
+</span><span>
+</span><span style="color:#c678dd;">def </span><span style="color:#61afef;">table_formatter</span><span>(</span><span style="color:#e06c75;">list_value</span><span>, </span><span style="color:#e06c75;">table_name</span><span>):
+</span><span>    </span><span style="color:#61afef;">print</span><span>(</span><span style="color:#c678dd;">f</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">INSERT INTO </span><span>{table_name.</span><span style="color:#e06c75;">upper</span><span>()}</span><span style="color:#98c379;">&quot;</span><span>)
+</span><span>    </span><span style="color:#61afef;">print</span><span>(</span><span style="color:#c678dd;">f</span><span style="color:#98c379;">&quot;VALUES (</span><span>{(</span><span style="color:#e06c75;">str</span><span>(list_value).</span><span style="color:#e06c75;">replace</span><span>(</span><span style="color:#98c379;">&#39;[&#39;</span><span>, </span><span style="color:#98c379;">&#39;&#39;</span><span>).</span><span style="color:#e06c75;">replace</span><span>(</span><span style="color:#98c379;">&#39;]&#39;</span><span>, </span><span style="color:#98c379;">&#39;&#39;</span><span>))}</span><span style="color:#98c379;">)&quot;</span><span>)
+</span><span>
+</span><span>
+</span><span style="color:#c678dd;">def </span><span style="color:#61afef;">table_column_formatter</span><span>(</span><span style="color:#e06c75;">list_value</span><span>, </span><span style="color:#e06c75;">table_name</span><span>, </span><span style="color:#e06c75;">column_name</span><span>):
+</span><span>    f_col_name </span><span style="color:#c678dd;">= </span><span style="color:#98c379;">&quot;, &quot;</span><span>.</span><span style="color:#e06c75;">join</span><span>(column_name)
+</span><span>    </span><span style="color:#61afef;">print</span><span>(</span><span style="color:#c678dd;">f</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">INSERT INTO </span><span>{table_name.</span><span style="color:#e06c75;">upper</span><span>()}</span><span style="color:#98c379;"> (</span><span>{f_col_name}</span><span style="color:#98c379;">)&quot;</span><span>)
+</span><span>    </span><span style="color:#61afef;">print</span><span>(</span><span style="color:#c678dd;">f</span><span style="color:#98c379;">&quot;VALUES (</span><span>{(</span><span style="color:#e06c75;">str</span><span>(list_value).</span><span style="color:#e06c75;">replace</span><span>(</span><span style="color:#98c379;">&#39;[&#39;</span><span>, </span><span style="color:#98c379;">&#39;&#39;</span><span>).</span><span style="color:#e06c75;">replace</span><span>(</span><span style="color:#98c379;">&#39;]&#39;</span><span>, </span><span style="color:#98c379;">&#39;&#39;</span><span>))}</span><span style="color:#98c379;">)&quot;</span><span>)
+</span><span>
+</span><span style="color:#61afef;">print</span><span>(</span><span style="color:#98c379;">&quot;Table only        [1]</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Table with column [2] &quot;</span><span>)
+</span><span>
+</span><span style="color:#c678dd;">while </span><span style="color:#e5c07b;">True</span><span>:
+</span><span>    </span><span style="color:#c678dd;">try</span><span>:
+</span><span>        table_type </span><span style="color:#c678dd;">= </span><span style="color:#61afef;">input</span><span>(</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Enter table type : [1] [2] &quot;</span><span>)
+</span><span>        </span><span style="color:#c678dd;">if </span><span>table_type </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&quot;1&quot;</span><span>:
+</span><span>            </span><span style="color:#c678dd;">break
+</span><span>        </span><span style="color:#c678dd;">elif </span><span>table_type </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&quot;2&quot;</span><span>:
+</span><span>            </span><span style="color:#c678dd;">break
+</span><span>        </span><span style="color:#c678dd;">else</span><span>:
+</span><span>            </span><span style="color:#61afef;">print</span><span>(</span><span style="color:#98c379;">&quot;Not a table type, please select between 1 or 2&quot;</span><span>)
+</span><span>    </span><span style="color:#c678dd;">except </span><span>ValueError:
+</span><span>        </span><span style="color:#c678dd;">continue
+</span><span>
+</span><span>table </span><span style="color:#c678dd;">= </span><span style="color:#61afef;">input</span><span>(</span><span style="color:#98c379;">&quot;Name of the table: &quot;</span><span>)
+</span><span style="color:#c678dd;">while </span><span style="color:#e5c07b;">True</span><span>:
+</span><span>    </span><span style="color:#c678dd;">try</span><span>:
+</span><span>        col_count </span><span style="color:#c678dd;">= </span><span style="color:#e06c75;">int</span><span>(</span><span style="color:#61afef;">input</span><span>(</span><span style="color:#98c379;">&quot;How many columns : &quot;</span><span>))
+</span><span>        </span><span style="color:#c678dd;">break
+</span><span>    </span><span style="color:#c678dd;">except </span><span>ValueError:
+</span><span>        </span><span style="color:#61afef;">print</span><span>(</span><span style="color:#98c379;">&quot;Not an number, please input a number&quot;</span><span>)
+</span><span>        </span><span style="color:#c678dd;">continue
+</span><span>
+</span><span>col </span><span style="color:#c678dd;">= </span><span>[]
+</span><span>col_with_name </span><span style="color:#c678dd;">= </span><span>[]
+</span><span>
+</span><span style="color:#c678dd;">for </span><span>i </span><span style="color:#c678dd;">in </span><span style="color:#61afef;">range</span><span>(</span><span style="color:#e5c07b;">1</span><span>, col_count </span><span style="color:#c678dd;">+ </span><span style="color:#e5c07b;">1</span><span>):
+</span><span>    </span><span style="color:#c678dd;">if </span><span>table_type </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&quot;1&quot;</span><span>:
+</span><span>        data </span><span style="color:#c678dd;">= </span><span style="color:#61afef;">input</span><span>(</span><span style="color:#c678dd;">f</span><span style="color:#98c379;">&quot;Enter attribute </span><span>{i}</span><span style="color:#98c379;">: &quot;</span><span>)
+</span><span>    </span><span style="color:#c678dd;">elif </span><span>table_type </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&quot;2&quot;</span><span>:
+</span><span>        col_name </span><span style="color:#c678dd;">= </span><span style="color:#61afef;">input</span><span>(</span><span style="color:#c678dd;">f</span><span style="color:#98c379;">&quot;Enter column name </span><span>{i}</span><span style="color:#98c379;">: &quot;</span><span>)
+</span><span>        col_with_name.</span><span style="color:#e06c75;">append</span><span>(col_name)
+</span><span>        data </span><span style="color:#c678dd;">= </span><span style="color:#61afef;">input</span><span>(</span><span style="color:#c678dd;">f</span><span style="color:#98c379;">&quot;Enter attribute   </span><span>{i}</span><span style="color:#98c379;">: &quot;</span><span>)
+</span><span>    </span><span style="color:#c678dd;">while </span><span style="color:#e5c07b;">True</span><span>:
+</span><span>        data_type </span><span style="color:#c678dd;">= </span><span style="color:#61afef;">input</span><span>(</span><span style="color:#c678dd;">f</span><span style="color:#98c379;">&quot;Enter datatype  </span><span>{i}</span><span style="color:#98c379;">: (int) (float) (str) &quot;</span><span>)
+</span><span>        lower_data_type </span><span style="color:#c678dd;">= </span><span>data_type.</span><span style="color:#e06c75;">lower</span><span>()
+</span><span>        </span><span style="color:#c678dd;">if </span><span>lower_data_type </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&quot;int&quot;</span><span>:
+</span><span>            conv_i </span><span style="color:#c678dd;">= </span><span style="color:#e06c75;">int</span><span>(data)
+</span><span>            col.</span><span style="color:#e06c75;">append</span><span>(conv_i)
+</span><span>            </span><span style="color:#c678dd;">break
+</span><span>        </span><span style="color:#c678dd;">elif </span><span>lower_data_type </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&quot;float&quot;</span><span>:
+</span><span>            conv_f </span><span style="color:#c678dd;">= </span><span style="color:#e06c75;">float</span><span>(data)
+</span><span>            col.</span><span style="color:#e06c75;">append</span><span>(conv_f)
+</span><span>            </span><span style="color:#c678dd;">break
+</span><span>        </span><span style="color:#c678dd;">elif </span><span>lower_data_type </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&quot;str&quot;</span><span>:
+</span><span>            conv_s </span><span style="color:#c678dd;">= </span><span style="color:#e06c75;">str</span><span>(data)
+</span><span>            col.</span><span style="color:#e06c75;">append</span><span>(conv_s)
+</span><span>            </span><span style="color:#c678dd;">break
+</span><span>        </span><span style="color:#c678dd;">else</span><span>:
+</span><span>            </span><span style="color:#61afef;">print</span><span>(</span><span style="color:#98c379;">&quot;Wrong datatype, please reenter&quot;</span><span>)
+</span><span>
+</span><span style="color:#c678dd;">if </span><span>table_type </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&quot;1&quot;</span><span>:
+</span><span>    </span><span style="color:#e06c75;">table_formatter</span><span>(col, table)
+</span><span style="color:#c678dd;">if </span><span>table_type </span><span style="color:#c678dd;">== </span><span style="color:#98c379;">&quot;2&quot;</span><span>:
+</span><span>    </span><span style="color:#e06c75;">table_column_formatter</span><span>(col, table, col_with_name)
+</span><span>
+</span><span style="color:#61afef;">input</span><span>(</span><span style="color:#98c379;">&quot;</span><span style="color:#56b6c2;">\n</span><span style="color:#98c379;">Press any key to exit.&quot;</span><span>)
+</span><span>
+</span></code></pre>
+
+
+    </div>
+  </section>
+  <footer>
+    <hr class="hr-bot">
+      <a href="https://landchad.net" target="_blank"><img src="https://landchad.net/pix/landchad.gif" alt="landchad.net"></a>
+      <a href="https://www.gnu.org/" target="_blank"><img src="https://jemcv.github.io/web/images/gnu.png" alt="gnu.org"></a>
+      <a href="https://www.vim.org" target="_blank"><img src="https://jemcv.github.io/web/images/vim.gif"  alt="vim.org"></a>
+      <a href="https://archlinux.org/" target="_blank"><img src="https://jemcv.github.io/web/images/arch.png"  alt="archlinux.org"></a>
+      <a href="https://larbs.xyz/" target="_blank"><img src="https://larbs.xyz/pix/larbs.gif" alt="larbs.xyz"> </a>
+    <div class="copyright">
+      become someone <a href="https://github.com/jemcv" target="_blank">[  Jem ]</a> unlike everyone
+    </div>
+  <footer>
+</body>
+</html>
